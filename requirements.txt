@@ -3,6 +3,9 @@ transformers>=4.44
 torch>=2.2
 soundfile>=0.12
 librosa>=0.10
+coqui-tts>=0.24        # TTS Kiriku (Coqui VITS)
+huggingface_hub>=0.24
+
 # --- NLU / ML ---
 scikit-learn>=1.4
 lightgbm>=4.3
