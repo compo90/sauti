@@ -1,0 +1,20 @@
+{
+  "note": "Messages du canal SORTANT (modele Kilkari). Un message par semaine gestationnelle. Exemples a completer et valider cliniquement.",
+  "messages": [
+    {
+      "semaine": 12,
+      "theme": "premiere CPN",
+      "texte_fr": "[A VALIDER] Vous etes au 3e mois. Si ce n'est pas fait, allez a votre premiere consultation prenatale cette semaine."
+    },
+    {
+      "semaine": 20,
+      "theme": "mouvements du bebe",
+      "texte_fr": "[A VALIDER] Vous sentez peut-etre bebe bouger. Continuez le fer/acide folique et dormez sous moustiquaire pour eviter le paludisme."
+    },
+    {
+      "semaine": 36,
+      "theme": "preparation accouchement",
+      "texte_fr": "[A VALIDER] L'accouchement approche. Preparez votre trousse et reperez le poste de sante. En cas de saignement ou de fortes douleurs, allez-y immediatement."
+    }
+  ]
+}

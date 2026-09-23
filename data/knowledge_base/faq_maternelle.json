@@ -1,0 +1,177 @@
+[
+  {
+    "id": "cpn_frequence",
+    "intent": "consultation_prenatale_frequence",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Combien de fois dois-je aller a la consultation prenatale ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] L'OMS recommande au moins 8 contacts prenatals pendant la grossesse. Rendez-vous au poste de sante des que vous savez que vous etes enceinte, puis suivez le calendrier donne par la sage-femme.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "PNDS a referencer",
+      "date": ""
+    }
+  },
+  {
+    "id": "nutrition_fer",
+    "intent": "nutrition_grossesse",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Que dois-je manger pendant la grossesse ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Mangez varie et prenez les comprimes de fer/acide folique donnes au poste de sante. Privilegiez les aliments locaux riches en fer (niebe, feuilles vertes, poisson). Buvez de l'eau propre.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "fievre_bebe",
+    "intent": "nouveau_ne_fievre",
+    "secteur": "nouveau_ne",
+    "danger_level": "surveillance",
+    "question_source_fr": "Mon bebe a de la fievre, que faire ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Une fievre chez un nouveau-ne peut etre grave. Decouvrez-le legerement, continuez l'allaitement, et rendez-vous au poste de sante sans tarder. Si le bebe a moins de 2 mois, consultez en urgence.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "vaccination_calendrier",
+    "intent": "nouveau_ne_vaccination",
+    "secteur": "nouveau_ne",
+    "danger_level": "info",
+    "question_source_fr": "Quand vacciner mon bebe ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Suivez le calendrier du Programme Elargi de Vaccination (PEV). Les premiers vaccins commencent a la naissance. Gardez le carnet de sante et presentez-vous aux dates indiquees par le poste de sante.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "PEV Senegal",
+      "date": ""
+    }
+  },
+  {
+    "id": "allaitement_exclusif",
+    "intent": "postnatal_allaitement",
+    "secteur": "postnatal",
+    "danger_level": "info",
+    "question_source_fr": "Dois-je donner de l'eau a mon bebe en plus du lait ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Jusqu'a 6 mois, l'allaitement maternel exclusif suffit : ni eau, ni autre aliment, sauf avis medical. Le lait maternel couvre les besoins en eau du bebe.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  }
+]

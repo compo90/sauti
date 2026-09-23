@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+jobs:
+  core:
+    name: Validation KB + tests (léger, sans modèles)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      # Dépendances légères uniquement : la CI ne télécharge pas torch/transformers.
+      # Le pipeline importe les libs voix de façon tardive -> tests logiques sans GPU.
+      - name: Installer les dépendances légères
+        run: pip install jsonschema pydantic-settings pytest
+      - name: Valider la base de connaissances (schéma)
+        run: python scripts/validate_kb.py
+      - name: Lancer les tests
+        env:
+          PYTHONPATH: "src:."
+        run: pytest -q

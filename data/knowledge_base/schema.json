@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Entree de base de connaissances - Sauti",
+  "type": "object",
+  "required": [
+    "id",
+    "intent",
+    "danger_level",
+    "reponses",
+    "validation"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "intent": {
+      "type": "string",
+      "description": "Intention normalisee, ex: nutrition_grossesse"
+    },
+    "secteur": {
+      "type": "string",
+      "enum": [
+        "prenatal",
+        "postnatal",
+        "nouveau_ne",
+        "planification",
+        "general"
+      ]
+    },
+    "danger_level": {
+      "type": "string",
+      "enum": [
+        "info",
+        "surveillance",
+        "urgent"
+      ]
+    },
+    "question_source_fr": {
+      "type": "string",
+      "description": "Formulation FR de reference (source)"
+    },
+    "reponses": {
+      "type": "object",
+      "description": "Reponse par langue. Cle = code ISO 639-3.",
+      "properties": {
+        "fr": {
+          "$ref": "#/definitions/reponse_langue"
+        },
+        "wol": {
+          "$ref": "#/definitions/reponse_langue"
+        },
+        "ful": {
+          "$ref": "#/definitions/reponse_langue"
+        },
+        "srr": {
+          "$ref": "#/definitions/reponse_langue"
+        }
+      },
+      "required": [
+        "fr"
+      ]
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "statut"
+      ],
+      "properties": {
+        "statut": {
+          "type": "string",
+          "enum": [
+            "brouillon",
+            "revue_linguistique",
+            "valide_clinique"
+          ]
+        },
+        "valide_par": {
+          "type": "string"
+        },
+        "protocole_ref": {
+          "type": "string",
+          "description": "Reference protocole national (PNDS...)"
+        },
+        "date": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "reponse_langue": {
+      "type": "object",
+      "required": [
+        "texte",
+        "statut"
+      ],
+      "properties": {
+        "texte": {
+          "type": "string"
+        },
+        "audio": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Chemin audio pre-enregistre (optionnel)"
+        },
+        "statut": {
+          "type": "string",
+          "enum": [
+            "a_traduire",
+            "traduit",
+            "valide_natif"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "note": "Signes de danger obstetricaux/neonatals de reference (OMS). A VALIDER et adapter aux protocoles nationaux. Le detecteur privilegie le RECALL : en cas de doute, on escalade.",
+  "signes": [
+    {
+      "id": "hemorragie",
+      "libelle_fr": "Saignement vaginal abondant",
+      "phase": [
+        "grossesse",
+        "accouchement",
+        "post-partum"
+      ],
+      "action": "urgent",
+      "message_fr": "[A VALIDER] C'est une urgence. Rendez-vous immediatement au poste de sante ou a l'hopital le plus proche. Faites-vous accompagner.",
+      "mots_cles": {
+        "fr": [
+          "saigne",
+          "saignement",
+          "sang",
+          "hemorragie",
+          "perte de sang"
+        ],
+        "wol": [],
+        "ful": [],
+        "srr": []
+      }
+    },
+    {
+      "id": "convulsions",
+      "libelle_fr": "Convulsions ou perte de connaissance",
+      "phase": [
+        "grossesse",
+        "post-partum"
+      ],
+      "action": "urgent",
+      "message_fr": "[A VALIDER] Urgence vitale (risque d'eclampsie). Allez immediatement a l'hopital.",
+      "mots_cles": {
+        "fr": [
+          "convulsion",
+          "crise",
+          "evanoui",
+          "perdu connaissance",
+          "tremble"
+        ],
+        "wol": [],
+        "ful": [],
+        "srr": []
+      }
+    },
+    {
+      "id": "cephalees_vision",
+      "libelle_fr": "Maux de tete violents avec vision floue",
+      "phase": [
+        "grossesse"
+      ],
+      "action": "urgent",
+      "message_fr": "[A VALIDER] Signe possible de pre-eclampsie. Consultez en urgence au poste de sante.",
+      "mots_cles": {
+        "fr": [
+          "mal de tete",
+          "cephalee",
+          "vision floue",
+          "vois flou",
+          "yeux troubles"
+        ],
+        "wol": [],
+        "ful": [],
+        "srr": []
+      }
+    },
+    {
+      "id": "fievre_forte",
+      "libelle_fr": "Forte fievre",
+      "phase": [
+        "grossesse",
+        "post-partum"
+      ],
+      "action": "urgent",
+      "message_fr": "[A VALIDER] Une forte fievre est un signe d'alerte. Rendez-vous au poste de sante sans tarder.",
+      "mots_cles": {
+        "fr": [
+          "fievre",
+          "chaud",
+          "temperature",
+          "brulant"
+        ],
+        "wol": [],
+        "ful": [],
+        "srr": []
+      }
+    },
+    {
+      "id": "mouvements_foetaux",
+      "libelle_fr": "Diminution ou absence des mouvements du bebe",
+      "phase": [
+        "grossesse"
+      ],
+      "action": "urgent",
+      "message_fr": "[A VALIDER] Si le bebe bouge moins que d'habitude, consultez rapidement au poste de sante.",
+      "mots_cles": {
+        "fr": [
+          "bebe ne bouge",
+          "bouge plus",
+          "pas de mouvement",
+          "bebe immobile"
+        ],
+        "wol": [],
+        "ful": [],
+        "srr": []
+      }
+    },
+    {
+      "id": "oedeme",
+      "libelle_fr": "Gonflement du visage et des mains",
+      "phase": [
+        "grossesse"
+      ],
+      "action": "surveillance",
+      "message_fr": "[A VALIDER] Un gonflement du visage/mains doit etre verifie. Prenez rendez-vous au poste de sante.",
+      "mots_cles": {
+        "fr": [
+          "gonfle",
+          "enfle",
+          "oedeme",
+          "visage gonfle",
+          "mains gonflees"
+        ],
+        "wol": [],
+        "ful": [],
+        "srr": []
+      }
+    }
+  ]
+}

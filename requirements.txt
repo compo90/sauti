@@ -1,0 +1,19 @@
+# --- Voix (Kiriku ASR/TTS, basé Whisper) ---
+transformers>=4.44
+torch>=2.2
+soundfile>=0.12
+librosa>=0.10
+# --- NLU / ML ---
+scikit-learn>=1.4
+lightgbm>=4.3
+sentence-transformers>=3.0
+# --- Service & config ---
+fastapi>=0.111
+uvicorn>=0.30
+pydantic>=2.7
+pydantic-settings>=2.3
+python-dotenv>=1.0
+# --- Données / validation ---
+jsonschema>=4.22
+# --- Tests ---
+pytest>=8.2

@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.log
+# modèles lourds téléchargés localement
+models/
+*.bin
+*.safetensors
+# audio (données potentiellement personnelles — ne jamais committer)
+data/corpus_test/*.wav
+data/corpus_test/*.mp3
+*.ckpt
+.ipynb_checkpoints/
+.pytest_cache/
