@@ -17,7 +17,9 @@
           "saignement",
           "sang",
           "hemorragie",
-          "perte de sang"
+          "perte de sang",
+          "je perds du sang",
+          "sama biir dafa saigne"
         ],
         "wol": [],
         "ful": [],
@@ -36,10 +38,14 @@
       "mots_cles": {
         "fr": [
           "convulsion",
+          "convulse",
           "crise",
           "evanoui",
           "perdu connaissance",
-          "tremble"
+          "perte de connaissance",
+          "tremble",
+          "tremblement",
+          "raide"
         ],
         "wol": [],
         "ful": [],
@@ -57,10 +63,13 @@
       "mots_cles": {
         "fr": [
           "mal de tete",
+          "maux de tete",
           "cephalee",
           "vision floue",
           "vois flou",
-          "yeux troubles"
+          "yeux troubles",
+          "trouble de la vue",
+          "tete qui tourne"
         ],
         "wol": [],
         "ful": [],
@@ -80,8 +89,10 @@
         "fr": [
           "fievre",
           "chaud",
+          "chaleur",
           "temperature",
-          "brulant"
+          "brulant",
+          "corps chaud"
         ],
         "wol": [],
         "ful": [],
@@ -99,9 +110,11 @@
       "mots_cles": {
         "fr": [
           "bebe ne bouge",
+          "bebe bouge plus",
           "bouge plus",
           "pas de mouvement",
-          "bebe immobile"
+          "bebe immobile",
+          "ne sens plus le bebe"
         ],
         "wol": [],
         "ful": [],
@@ -119,10 +132,13 @@
       "mots_cles": {
         "fr": [
           "gonfle",
+          "gonflement",
           "enfle",
           "oedeme",
           "visage gonfle",
-          "mains gonflees"
+          "mains gonflees",
+          "pieds gonfles",
+          "jambes gonflees"
         ],
         "wol": [],
         "ful": [],

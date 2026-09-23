@@ -7,7 +7,7 @@
     "question_source_fr": "Combien de fois dois-je aller a la consultation prenatale ?",
     "reponses": {
       "fr": {
-        "texte": "[A VALIDER] L'OMS recommande au moins 8 contacts prenatals pendant la grossesse. Rendez-vous au poste de sante des que vous savez que vous etes enceinte, puis suivez le calendrier donne par la sage-femme.",
+        "texte": "[A VALIDER] L'OMS recommande au moins 8 contacts prenatals. Rendez-vous au poste de sante des que vous savez que vous etes enceinte, puis suivez le calendrier donne par la sage-femme.",
         "audio": null,
         "statut": "traduit"
       },
@@ -35,14 +35,14 @@
     }
   },
   {
-    "id": "nutrition_fer",
+    "id": "nutrition_grossesse",
     "intent": "nutrition_grossesse",
     "secteur": "prenatal",
     "danger_level": "info",
     "question_source_fr": "Que dois-je manger pendant la grossesse ?",
     "reponses": {
       "fr": {
-        "texte": "[A VALIDER] Mangez varie et prenez les comprimes de fer/acide folique donnes au poste de sante. Privilegiez les aliments locaux riches en fer (niebe, feuilles vertes, poisson). Buvez de l'eau propre.",
+        "texte": "[A VALIDER] Mangez varie et prenez chaque jour les comprimes de fer et d'acide folique donnes au poste de sante. Privilegiez les aliments locaux riches en fer (niebe, feuilles vertes, poisson) et buvez de l'eau propre.",
         "audio": null,
         "statut": "traduit"
       },
@@ -70,14 +70,84 @@
     }
   },
   {
-    "id": "fievre_bebe",
-    "intent": "nouveau_ne_fievre",
-    "secteur": "nouveau_ne",
-    "danger_level": "surveillance",
-    "question_source_fr": "Mon bebe a de la fievre, que faire ?",
+    "id": "paludisme_moustiquaire",
+    "intent": "prevention_paludisme",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Comment me proteger du paludisme enceinte ?",
     "reponses": {
       "fr": {
-        "texte": "[A VALIDER] Une fievre chez un nouveau-ne peut etre grave. Decouvrez-le legerement, continuez l'allaitement, et rendez-vous au poste de sante sans tarder. Si le bebe a moins de 2 mois, consultez en urgence.",
+        "texte": "[A VALIDER] Dormez chaque nuit sous une moustiquaire impregnee et prenez le traitement preventif du paludisme propose au poste de sante. En cas de fievre, consultez rapidement.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "PNLP",
+      "date": ""
+    }
+  },
+  {
+    "id": "vaccin_tetanos",
+    "intent": "vaccination_maternelle",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Dois-je me faire vacciner pendant la grossesse ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Oui, le vaccin contre le tetanos protege la mere et le bebe. Suivez les doses indiquees par le poste de sante.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "PEV",
+      "date": ""
+    }
+  },
+  {
+    "id": "signes_danger_grossesse",
+    "intent": "signes_danger_grossesse",
+    "secteur": "prenatal",
+    "danger_level": "surveillance",
+    "question_source_fr": "Quels signes doivent m'alerter pendant la grossesse ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Consultez immediatement en cas de saignement, de fortes douleurs au ventre, de maux de tete violents avec vision floue, de fievre, de convulsions, ou si le bebe bouge moins que d'habitude.",
         "audio": null,
         "statut": "traduit"
       },
@@ -105,14 +175,679 @@
     }
   },
   {
-    "id": "vaccination_calendrier",
+    "id": "nausees_vomissements",
+    "intent": "inconforts_grossesse",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "J'ai des nausees et des vomissements, que faire ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Mangez en petites quantites et souvent, evitez les odeurs fortes et buvez regulierement. Si les vomissements sont tres frequents et vous empechent de boire, rendez-vous au poste de sante.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "anemie_fatigue",
+    "intent": "anemie_grossesse",
+    "secteur": "prenatal",
+    "danger_level": "surveillance",
+    "question_source_fr": "Je suis tres fatiguee et pale, est-ce grave ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] La fatigue avec paleur peut signaler une anemie, frequente pendant la grossesse. Continuez le fer/acide folique et parlez-en au poste de sante pour un controle.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "prise_poids",
+    "intent": "suivi_grossesse",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Est-ce normal de prendre du poids ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Oui, prendre du poids progressivement est normal et bon signe. Le poids est suivi a chaque consultation prenatale.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "activite_repos",
+    "intent": "mode_de_vie_grossesse",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Puis-je continuer a travailler et faire mes taches ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Une activite moderee est possible, mais menagez-vous, evitez de porter de lourdes charges et reposez-vous. Ecoutez votre corps.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "tabac_alcool",
+    "intent": "mode_de_vie_grossesse",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Le tabac et l'alcool sont-ils dangereux enceinte ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Oui. Evitez le tabac, l'alcool et l'automedication : ils sont nocifs pour le bebe. Ne prenez un medicament que sur avis d'un soignant.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "tests_cpn",
+    "intent": "consultation_prenatale_contenu",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Que fait-on lors d'une consultation prenatale ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] On verifie votre tension, votre poids, la croissance du bebe, et on propose des examens utiles (dont le depistage volontaire). C'est aussi le moment de poser vos questions.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "hygiene_eau",
+    "intent": "hygiene_grossesse",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Quelles precautions d'hygiene pendant la grossesse ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Lavez-vous les mains regulierement, buvez de l'eau propre et lavez bien fruits et legumes pour eviter les infections.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "preparation_accouchement",
+    "intent": "preparation_accouchement",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Comment preparer mon accouchement ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Preparez une trousse (habits, pieces, argent pour le transport), reperez le poste de sante et prevoyez comment vous y rendre le moment venu. Parlez-en tot avec la sage-femme.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "lieu_accouchement",
+    "intent": "lieu_accouchement",
+    "secteur": "prenatal",
+    "danger_level": "info",
+    "question_source_fr": "Ou dois-je accoucher ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Accouchez dans une structure de sante avec du personnel qualifie : c'est le plus sur pour vous et le bebe, et une aide immediate est disponible en cas de complication.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "signes_travail",
+    "intent": "signes_travail",
+    "secteur": "prenatal",
+    "danger_level": "surveillance",
+    "question_source_fr": "Comment savoir que le travail commence ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Des contractions regulieres et de plus en plus fortes, une perte des eaux ou un bouchon de glaires annoncent le travail. Rendez-vous au poste de sante.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "signes_danger_accouchement",
+    "intent": "signes_danger_accouchement",
+    "secteur": "prenatal",
+    "danger_level": "urgent",
+    "question_source_fr": "Quels signes de danger pendant le travail ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Allez immediatement a l'hopital en cas de saignement abondant, de convulsions, de perte de connaissance, ou si le travail dure tres longtemps sans progresser.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "saignement_post_partum",
+    "intent": "post_partum_saignement",
+    "secteur": "postnatal",
+    "danger_level": "surveillance",
+    "question_source_fr": "Est-il normal de saigner apres l'accouchement ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] De legeres pertes qui diminuent avec les jours sont normales. Mais un saignement abondant qui trempe rapidement les protections est une urgence : allez au poste de sante immediatement.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "consultation_postnatale",
+    "intent": "consultation_postnatale",
+    "secteur": "postnatal",
+    "danger_level": "info",
+    "question_source_fr": "Dois-je consulter apres l'accouchement ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Oui. Une visite postnatale dans les jours qui suivent l'accouchement permet de verifier votre sante et celle du bebe. Suivez le calendrier donne par le poste de sante.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "planification_familiale",
+    "intent": "planification_familiale",
+    "secteur": "postnatal",
+    "danger_level": "info",
+    "question_source_fr": "Quand puis-je espacer les naissances ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Espacer les naissances protege votre sante et celle du bebe. Plusieurs methodes existent : demandez conseil au poste de sante pour choisir celle qui vous convient.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "douleur_seins_allaitement",
+    "intent": "allaitement_difficultes",
+    "secteur": "postnatal",
+    "danger_level": "surveillance",
+    "question_source_fr": "J'ai mal aux seins en allaitant, que faire ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Continuez a allaiter souvent et videz bien le sein. Si le sein est rouge, dur, chaud et douloureux avec de la fievre, consultez au poste de sante (risque d'infection).",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "fievre_mere_postpartum",
+    "intent": "post_partum_fievre",
+    "secteur": "postnatal",
+    "danger_level": "urgent",
+    "question_source_fr": "J'ai de la fievre apres l'accouchement, est-ce grave ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Une fievre apres l'accouchement peut signaler une infection. Rendez-vous au poste de sante sans tarder.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "alimentation_allaitante",
+    "intent": "nutrition_postnatale",
+    "secteur": "postnatal",
+    "danger_level": "info",
+    "question_source_fr": "Que dois-je manger quand j'allaite ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Mangez varie et a votre faim, buvez suffisamment d'eau propre, et continuez les supplements conseilles par le poste de sante. Une mere bien nourrie allaite mieux.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "allaitement_exclusif",
+    "intent": "nouveau_ne_allaitement",
+    "secteur": "nouveau_ne",
+    "danger_level": "info",
+    "question_source_fr": "Dois-je donner de l'eau a mon bebe en plus du lait ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Jusqu'a 6 mois, l'allaitement maternel exclusif suffit : ni eau, ni autre aliment, sauf avis medical. Le lait maternel couvre les besoins en eau du bebe.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "allaitement_frequence",
+    "intent": "nouveau_ne_allaitement",
+    "secteur": "nouveau_ne",
+    "danger_level": "info",
+    "question_source_fr": "Combien de fois dois-je allaiter mon bebe ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Allaitez a la demande, jour et nuit, des que le bebe le reclame (au moins 8 fois par jour). Commencez l'allaitement dans l'heure qui suit la naissance.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "nouveau_ne_vaccination",
     "intent": "nouveau_ne_vaccination",
     "secteur": "nouveau_ne",
     "danger_level": "info",
     "question_source_fr": "Quand vacciner mon bebe ?",
     "reponses": {
       "fr": {
-        "texte": "[A VALIDER] Suivez le calendrier du Programme Elargi de Vaccination (PEV). Les premiers vaccins commencent a la naissance. Gardez le carnet de sante et presentez-vous aux dates indiquees par le poste de sante.",
+        "texte": "[A VALIDER] Suivez le calendrier du Programme Elargi de Vaccination (PEV). Les premiers vaccins commencent a la naissance. Gardez le carnet de sante et respectez les dates.",
         "audio": null,
         "statut": "traduit"
       },
@@ -135,19 +870,159 @@
     "validation": {
       "statut": "brouillon",
       "valide_par": "",
-      "protocole_ref": "PEV Senegal",
+      "protocole_ref": "PEV",
       "date": ""
     }
   },
   {
-    "id": "allaitement_exclusif",
-    "intent": "postnatal_allaitement",
-    "secteur": "postnatal",
-    "danger_level": "info",
-    "question_source_fr": "Dois-je donner de l'eau a mon bebe en plus du lait ?",
+    "id": "soins_cordon",
+    "intent": "nouveau_ne_soins",
+    "secteur": "nouveau_ne",
+    "danger_level": "surveillance",
+    "question_source_fr": "Comment prendre soin du cordon du bebe ?",
     "reponses": {
       "fr": {
-        "texte": "[A VALIDER] Jusqu'a 6 mois, l'allaitement maternel exclusif suffit : ni eau, ni autre aliment, sauf avis medical. Le lait maternel couvre les besoins en eau du bebe.",
+        "texte": "[A VALIDER] Gardez le cordon propre et sec, sans y appliquer de produit. Si la base devient rouge, gonflee, sent mauvais ou saigne, consultez au poste de sante.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "nouveau_ne_fievre",
+    "intent": "nouveau_ne_fievre",
+    "secteur": "nouveau_ne",
+    "danger_level": "urgent",
+    "question_source_fr": "Mon bebe a de la fievre, que faire ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Une fievre chez un nouveau-ne peut etre grave. Continuez l'allaitement et rendez-vous au poste de sante sans tarder. Si le bebe a moins de 2 mois, consultez en urgence.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "ictere_jaunisse",
+    "intent": "nouveau_ne_ictere",
+    "secteur": "nouveau_ne",
+    "danger_level": "surveillance",
+    "question_source_fr": "La peau et les yeux de mon bebe sont jaunes, est-ce grave ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Une coloration jaune de la peau ou des yeux (jaunisse) doit etre montree rapidement au poste de sante, surtout si elle apparait tot ou s'accentue.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "garder_bebe_au_chaud",
+    "intent": "nouveau_ne_soins",
+    "secteur": "nouveau_ne",
+    "danger_level": "info",
+    "question_source_fr": "Comment garder mon nouveau-ne au chaud ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Gardez le bebe contre votre peau (peau a peau), couvrez-lui la tete et evitez les courants d'air. Le contact peau a peau le rechauffe et favorise l'allaitement.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    }
+  },
+  {
+    "id": "signes_danger_nouveau_ne",
+    "intent": "signes_danger_nouveau_ne",
+    "secteur": "nouveau_ne",
+    "danger_level": "urgent",
+    "question_source_fr": "Quels signes de danger chez le nouveau-ne ?",
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Consultez en urgence si le bebe tete mal ou refuse de teter, respire difficilement, a de la fievre ou est froid, convulse, est tres mou, ou a le nombril rouge et purulent.",
         "audio": null,
         "statut": "traduit"
       },
