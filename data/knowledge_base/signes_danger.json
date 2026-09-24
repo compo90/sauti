@@ -21,7 +21,12 @@
           "je perds du sang",
           "sama biir dafa saigne"
         ],
-        "wol": [],
+        "wol": [
+          "damay ñàkk",
+          "ñàkk bu bari",
+          "amna dëret",
+          "dëret"
+        ],
         "ful": [],
         "srr": []
       }
@@ -47,7 +52,11 @@
           "tremblement",
           "raide"
         ],
-        "wol": [],
+        "wol": [
+          "dama xëm",
+          "xëm",
+          "saayi"
+        ],
         "ful": [],
         "srr": []
       }
@@ -71,7 +80,14 @@
           "trouble de la vue",
           "tete qui tourne"
         ],
-        "wol": [],
+        "wol": [
+          "sama bopp dey metti",
+          "bopp metti bu baax",
+          "sama bopp dafa metti lool",
+          "sama bët dey lëndem",
+          "sama gis-gis dafa leerul",
+          "damay miir"
+        ],
         "ful": [],
         "srr": []
       }
@@ -94,7 +110,13 @@
           "brulant",
           "corps chaud"
         ],
-        "wol": [],
+        "wol": [
+          "dama sibbiru",
+          "sibbiru",
+          "yaram bu tàng",
+          "sama yaram tàng na lool",
+          "yaram wi tàng na torop"
+        ],
         "ful": [],
         "srr": []
       }
@@ -116,7 +138,13 @@
           "bebe immobile",
           "ne sens plus le bebe"
         ],
-        "wol": [],
+        "wol": [
+          "doom bi dootul yëngu",
+          "sama doom bi dootul yëngu ci biir",
+          "liir bi dootul yëngu",
+          "dootul yëngu",
+          "liir bi yëngu na tuuti"
+        ],
         "ful": [],
         "srr": []
       }
@@ -140,7 +168,11 @@
           "pieds gonfles",
           "jambes gonflees"
         ],
-        "wol": [],
+        "wol": [
+          "sama kanam dafa newwi",
+          "sama tank dafa newwi",
+          "newwi"
+        ],
         "ful": [],
         "srr": []
       }
