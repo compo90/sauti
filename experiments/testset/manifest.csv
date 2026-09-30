@@ -1,9 +1,12 @@
 fichier,langue,condition,locuteur,sexe,texte_ref
-wol_calme_spk01_001.wav,wol,calme,spk01,f,lan laa wara def ba ma ànd
-wol_calme_spk01_002.wav,wol,calme,spk01,f,sama biir dafa metti bu baax
-wol_danger_spk02_001.wav,wol,calme,spk02,f,amna dëret bu bari
-wol_danger_spk02_002.wav,wol,telephone,spk02,f,sama yaram tàng na lool
-wol_bruit_spk03_001.wav,wol,bruit,spk03,f,kañ laa wara dem ci poste de santé
-wol_switch_spk03_002.wav,wol,code_switch,spk03,f,sama rendez-vous bi kañ la
-ful_menu_spk04_001.wav,ful,calme,spk04,f,mi yiɗi anndude no mi waɗata
-srr_menu_spk05_001.wav,srr,calme,spk05,f,o waamaa a foog no
+wol_calme_spk01_01.wav,wol,calme,spk01,f,amna dëret
+wol_calme_spk01_02.wav,wol,calme,spk01,f,ñàkk bu bari
+wol_calme_spk01_03.wav,wol,calme,spk01,f,sama yaram tàng na lool
+wol_calme_spk01_04.wav,wol,calme,spk01,f,dama sibbiru
+wol_calme_spk01_05.wav,wol,calme,spk01,f,sama bopp dafa metti lool
+wol_calme_spk01_06.wav,wol,calme,spk01,f,sama bët dey lëndem 
+wol_calme_spk01_07.wav,wol,calme,spk01,f,dama xëm
+wol_calme_spk01_08.wav,wol,calme,spk01,f,sama doom bi dootul yëngu ci biir
+wol_calme_spk01_09.wav,wol,calme,spk01,f,sama kanam dafa newwi
+wol_calme_spk01_10.wav,wol,calme,spk01,f,sama yaram tàng na lool
+wol_calme_spk01_11.wav,wol,calme,spk01,f,dama miir
