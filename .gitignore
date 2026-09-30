@@ -14,3 +14,7 @@ data/corpus_test/*.mp3
 *.ckpt
 .ipynb_checkpoints/
 .pytest_cache/
+
+experiments/testset/manifest.csv
+experiments/testset/audio/*.wav
+experiments/results/*.json
