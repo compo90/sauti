@@ -167,8 +167,8 @@ Le clip #4 raté par l'ASR est rattrapé par le dépistage.
   - Historique : `manifest.csv` (11 phrases scriptées partie A, `spk01`) a été
     public jusqu'au 8 oct. Risque jugé faible (phrases scriptées, pseudonyme) →
     pas de réécriture d'historique. Ne JAMAIS y mettre de parties B/C.
-- **Envoyer les audios de test à l'API** = les transmettre à un tiers (RunPod, EU) :
-  vérifier que le consentement des locutrices couvre ce traitement.
+- **Envoi des audios de test à l'API** (tiers : RunPod, UE) : couvert par le
+  consentement (confirmé le 8 oct. 2026). À re-vérifier pour toute nouvelle locutrice.
 
 **Format** `experiments/testset/manifest.csv` (UTF-8) :
 `fichier,langue,condition,locuteur,sexe,texte_ref`. Conditions :
@@ -207,15 +207,22 @@ Le clip #4 raté par l'ASR est rattrapé par le dépistage.
 
 ---
 
-## 9. Ressources externes (Google Drive — à connecter)
+## 9. Ressources externes — Google Drive du projet
 
-- `Sauti_Kiriku_Colab.ipynb` — banc ASR+WER (A) + TTS Coqui (B).
-- `Sauti_Benchmark_Colab.ipynb` — banc WER + rappel danger (GPU).
-- `Sauti_Demo_E2E.ipynb` — démo bout-en-bout (ASR → danger → TTS).
-- Workbook Excel / fiches / audios du jeu de test.
-- `<AJOUTER LES CHEMINS DRIVE ICI>`
+Dossier : https://drive.google.com/drive/folders/14Xws10ZZ1CglzHqKSlLVIVCkHB7Cs5cI
+(accès restreint : c'est ici que vivent les DONNÉES — audios, manifeste réel).
 
----
+| Fichier | ID Drive | Rôle |
+|---|---|---|
+| `Sauti_Benchmark_Colab.ipynb` | `1w_PRZnpJOBmtNhgrxO3Sg2m-2mm-771c` | banc WER + rappel danger (GPU) — run du 30 sept. (30,4 %) |
+| `Sauti_Kiriku_Colab.ipynb` | `1aabavx9lKQ0KK5nGSLBfV8rHDAAeINEn` | ASR+WER (A) + TTS Coqui (B) |
+| `Sauti_Demo_E2E.ipynb` | `1QqVRasZrmjEBhVwywcqCchxufOoyd6tP` | démo bout-en-bout ASR → danger → TTS |
+| `Sauti_validation_contenu.xlsx` | `1H4k0s5Gk0mGDiIYLoLPErobRrkZNM0zR` | validation clinique du contenu |
+| `Matosbi 10/12/13/14.m4a` | — | 4 enregistrements Partie B (à transcrire par un locuteur natif) |
+| `HUG.png`, `TTS.png` | — | captures (HF / TTS) |
+
+Consentement : l'envoi des audios de test à l'API Kiriku (RunPod, UE) est
+couvert (confirmé par Aboubacar le 8 oct. 2026).
 
 ## 10. Reste à faire (priorisé — deadline 10 oct. 20h)
 
