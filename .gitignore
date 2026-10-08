@@ -15,9 +15,15 @@ data/corpus_test/*.mp3
 .ipynb_checkpoints/
 .pytest_cache/
 
+# Jeu de test = DONNEES sous consentement (audios + transcriptions liees a une
+# locutrice) : stocke hors du depot public (Drive equipe, acces restreint).
+# Seul manifest.example.csv (schema, phrases fictives) est versionne.
 experiments/testset/manifest.csv
-experiments/testset/audio/*.wav
-experiments/results/*.json
+experiments/testset/audio/*
+# Resultats (agregats seulement, aucun texte) : VERSIONNES, avec manifest_sha256.
+# Les auto-tests (--mock) ne le sont pas.
+experiments/results/mock_*.json
 
 experiments/testset/raw/
 experiments/testset/audio/*.wav
+experiments/smoke/

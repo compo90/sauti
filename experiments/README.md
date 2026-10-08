@@ -79,8 +79,25 @@ Pour démarrer : copier `manifest.example.csv` en `manifest.csv`, y mettre tes
 vraies lignes, déposer les `.wav` dans `experiments/testset/audio/`.
 
 Les résultats sont écrits dans `experiments/results/asr_<horodatage>.json`
-(reproductibles, à commiter) et résumés dans le terminal. Reporter le tableau
-final dans `docs/modeles_kiriku.md`.
+et résumés dans le terminal. Reporter le tableau final dans `docs/modeles_kiriku.md`.
+
+## Politique de données (dépôt public)
+
+| Élément | Nature | Où il vit | Versionné ? |
+|---|---|---|---|
+| Audios `.wav` | donnée personnelle (voix) sous consentement | Drive équipe, accès restreint | **jamais** |
+| `manifest.csv` | étiquettes liées à une locutrice ; parties B/C = paroles libres | avec les audios | **non** (`.gitignore`) |
+| `manifest.example.csv` | schéma + phrases fictives | dépôt | oui |
+| `results/asr_*.json` | agrégats (WER, IC, rappel), aucun texte | dépôt | **oui** — preuve des chiffres annoncés |
+| `results/mock_*.json` | auto-tests | local | non |
+
+Chaque résultat porte `manifest_sha256` : il désigne la version exacte du jeu
+de test sans la publier. Un chiffre cité dans le pitch ou la doc doit renvoyer à
+un `asr_*.json` versionné. Le jeu de test sert à **mesurer**, jamais à régler
+le détecteur (sinon le chiffre est biaisé).
+
+Envoyer les audios à l'API Kiriku revient à les transmettre à un tiers
+(RunPod, UE) : le consentement des locutrices doit couvrir ce traitement.
 
 ## Après la mesure — l'ordre des décisions
 

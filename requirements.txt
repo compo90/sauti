@@ -5,6 +5,7 @@ soundfile>=0.12
 librosa>=0.10
 coqui-tts>=0.24        # TTS Kiriku (Coqui VITS)
 huggingface_hub>=0.24
+requests>=2.31         # client API Kiriku (backend voix 'api')
 
 # --- NLU / ML ---
 scikit-learn>=1.4

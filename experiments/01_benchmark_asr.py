@@ -42,6 +42,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import random
 import sys
@@ -218,7 +219,8 @@ def afficher_et_ecrire(agg, rappel, meta, mots_danger):
     print("  BANC D'ESSAI ASR — SAUTI   ·  M-Kiriku-ASR")
     print("=" * 62)
     print(f"  Date        : {meta['date']}")
-    print(f"  Modele      : {meta['modele']}   (mode : {meta['mode']})")
+    print(f"  Modele      : {meta['modele']}   (mode : {meta['mode']}, backend : {meta['backend']})")
+    print(f"  Manifeste   : sha256 {meta['manifest_sha256'][:12]}…  ·  {meta['n_locuteurs']} locuteur(s)")
     print(f"  Enonces     : {meta['n_scores']} scores / {meta['n_total']} lignes")
     if meta["n_manquants"]:
         print(f"  Audio absent: {meta['n_manquants']} (non scores)")
@@ -263,7 +265,8 @@ def afficher_et_ecrire(agg, rappel, meta, mots_danger):
 
     # JSON reproductible
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-    out_json = REPO / "experiments" / "results" / f"asr_{stamp}.json"
+    prefixe = "mock" if meta["mode"] == "mock" else "asr"  # mock_* non versionnes
+    out_json = REPO / "experiments" / "results" / f"{prefixe}_{stamp}.json"
     payload = {
         "meta": meta,
         "global": _clean(agg["global"]),
@@ -284,6 +287,10 @@ def _clean(d):
 # Main
 # --------------------------------------------------------------------------- #
 def main():
+    # Console Windows (cp1252) : evite un crash sur les diacritiques wolof si la
+    # sortie est redirigee vers un fichier ou un pipe.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser(description="Banc d'essai ASR de Sauti (WER/CER + securite).")
     ap.add_argument("--manifest", type=Path,
                     default=REPO / "experiments" / "testset" / "manifest.csv")
@@ -364,9 +371,14 @@ def main():
             print(f"  [!] {r['fichier']} : echec ASR ({e}) — ignore")
             continue
         paires.append({"langue": r["langue"], "condition": r.get("condition", "?"),
+                       "locuteur": r.get("locuteur", "?"),
                        "ref": r["texte_ref"], "hyp": hyp})
         if i % 10 == 0:
             print(f"  {i}/{len(a_scorer)}")
+
+    if not paires:
+        sys.exit("[ERREUR] Aucun enonce transcrit (toutes les transcriptions ont echoue) "
+                 "— aucun resultat ecrit.")
 
     # --- agregation ---
     def bloc(sous_ensemble):
@@ -392,10 +404,19 @@ def main():
             agg["par_condition"][key] = bloc(sub)
 
     rappel = rappel_danger(paires, charger_mots_danger())
+    if args.mock:
+        backend = "mock"
+    else:
+        backend = "api Kiriku" if asr.utiliser_api else "local (transformers)"
     meta = {
         "date": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "modele": "AIHubSN/M-Kiriku-ASR" if not args.mock else "MOCK (auto-test)",
         "mode": "mock" if args.mock else "reel",
+        "backend": backend,
+        # Le manifeste reste prive (donnees) : son empreinte relie ce resultat
+        # a une version exacte du jeu de test sans le publier.
+        "manifest_sha256": hashlib.sha256(args.manifest.read_bytes()).hexdigest(),
+        "n_locuteurs": len({p.get("locuteur") for p in paires}),
         "n_total": len(lignes), "n_scores": len(paires),
         "n_manquants": len(manquants),
     }

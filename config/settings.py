@@ -10,6 +10,12 @@ class Settings(BaseSettings):
 
     hf_token: str = ""
 
+    # --- Backend voix : "api" (API Kiriku du challenge), "local" (modeles HF
+    # charges localement) ou "auto" (api si KIRIKU_API_KEY est renseignee). ---
+    voice_backend: str = "auto"
+    kiriku_api_key: str = ""
+    kiriku_api_base: str = "https://14hyb7tjwzuh9q-8000.proxy.runpod.net/v1"
+
     # --- ASR : un seul modele MULTILINGUE couvre wolof + pulaar + serere ---
     # AIHubSN/M-Kiriku-ASR (fine-tune whisper-large-v3, gated, apache-2.0)
     kiriku_asr_model: str = "AIHubSN/M-Kiriku-ASR"
@@ -27,6 +33,12 @@ class Settings(BaseSettings):
 
     log_level: str = "INFO"
     default_lang: str = "wol"
+
+    @property
+    def utilise_api(self) -> bool:
+        if self.voice_backend == "auto":
+            return bool(self.kiriku_api_key)
+        return self.voice_backend == "api"
 
     @property
     def tts_par_langue(self) -> dict[str, str]:

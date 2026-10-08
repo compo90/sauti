@@ -33,10 +33,14 @@ class Audio:
 
 
 class KirikuTTS:
-    def __init__(self, mock: bool = False, sortie_dir: str | None = None):
+    def __init__(self, mock: bool = False, sortie_dir: str | None = None,
+                 api=None, utiliser_api: bool | None = None):
         self.mock = mock
         self.sortie_dir = Path(sortie_dir or tempfile.gettempdir()) / "sauti_tts"
         self._synth: dict[str, object] = {}   # cache par langue
+        # Backend API Kiriku (challenge) : wolof + pulaar, pas de serere.
+        self.utiliser_api = settings.utilise_api if utiliser_api is None else utiliser_api
+        self._api = api
 
     def _lazy_load(self, langue: str):
         """Telecharge le checkpoint Coqui et instancie le Synthesizer (une fois)."""
@@ -78,11 +82,22 @@ class KirikuTTS:
             raise TTSIndisponible(
                 f"Pas de TTS pour {langue!r} et aucun audio pre-enregistre fourni.")
 
-        # Synthese Coqui VITS
-        synth = self._lazy_load(langue)
-        self.sortie_dir.mkdir(parents=True, exist_ok=True)
         import uuid
+        self.sortie_dir.mkdir(parents=True, exist_ok=True)
         out = self.sortie_dir / f"{langue}_{uuid.uuid4().hex[:8]}.wav"
+
+        if self.utiliser_api:
+            if self._api is None:
+                from sauti.voice.kiriku_api import KirikuAPI
+                self._api = KirikuAPI()
+            try:
+                out.write_bytes(self._api.synthetiser(texte, langue))
+            except Exception as e:  # reseau, quota, 5xx -> degradation geree par le pipeline
+                raise TTSIndisponible(f"API Kiriku TTS indisponible : {e}") from e
+            return Audio(langue=langue, source="tts", contenu=str(out))
+
+        # Synthese Coqui VITS (local)
+        synth = self._lazy_load(langue)
         wav = synth.tts(texte)
         synth.save_wav(wav, str(out))
         return Audio(langue=langue, source="tts", contenu=str(out))

@@ -29,10 +29,14 @@ class Transcription:
 
 
 class KirikuASR:
-    def __init__(self, model_id: str | None = None, mock: bool = False):
+    def __init__(self, model_id: str | None = None, mock: bool = False,
+                 api=None, utiliser_api: bool | None = None):
         self.model_id = model_id or settings.kiriku_asr_model
         self.mock = mock
         self._pipe = None
+        # Backend API Kiriku (challenge) : evite whisper-large-v3 en local.
+        self.utiliser_api = settings.utilise_api if utiliser_api is None else utiliser_api
+        self._api = api
 
     def _lazy_load(self):
         if self._pipe is not None or self.mock:
@@ -53,6 +57,12 @@ class KirikuASR:
 
         if self.mock:
             return Transcription(texte=texte_mock or "", langue=langue)
+
+        if self.utiliser_api:
+            if self._api is None:
+                from sauti.voice.kiriku_api import KirikuAPI
+                self._api = KirikuAPI()
+            return Transcription(texte=self._api.transcrire(audio, langue), langue=langue)
 
         self._lazy_load()
         gen_kwargs = {}
