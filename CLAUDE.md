@@ -129,17 +129,23 @@ céphalées/vision, fièvre forte, mouvements fœtaux, œdème.
 
 ---
 
-## 5. Résultats mesurés (à jour au 30 sept. 2026)
+## 5. Résultats mesurés (à jour au 8 oct. 2026)
 
-Jeu de test : **11 clips wolof, voix féminines, locutrices natives** (signes de danger).
-Mesuré avec le modèle HF en local/Colab (pas encore via l'API).
+Jeu de test : **11 clips wolof, 1 locutrice native** (`spk01`, signes de danger, calme).
+Manifeste **v2** `a2eb3c2cb7eb…` (références corrigées par écoute le 8 oct. ; v1
+sauvegardé en privé dans `experiments/testset/raw/`).
 
-- **WER M-Kiriku-ASR : ~30,4 %** (assoupli 26,1 %), **IC 95 % [13,7 – 57,1 %]**.
-  → NE PAS annoncer « 30 % » sans l'IC. Repère AI Hub ~16 % (studio).
-- **Rappel danger** (métrique de sécurité principale) :
-  - exact : 8/11 = **73 %**, 0 faux positif ; tolérant (fuzzy) : 9/11 = **82 %**, 0 faux positif.
-- **2 ratés restants** = vraies pertes ASR (« ñàkk bu bari » → « niakoul bou bar » ;
-  « dama sibbiru » → « pharmacie birou »). Fermés par l'ARCHITECTURE (filet oui/non + escalade).
+- **WER (API Kiriku, refs v2) : 26,1 % [IC95 11,8 – 48,5 %]**, assoupli 21,7 %, CER 9,1 %
+  → `experiments/results/asr_20261008_163830.json`. **Toujours citer avec l'IC**.
+  Historique : 30,4 % (Colab, refs v1), 39,0 % (API, refs v1) — écarts dus aux références.
+- **Limites** : 1 seule locutrice, phrases courtes, corrections faites après avoir vu l'ASR.
+- **Rappel danger** (métrique de sécurité principale), détecteur tolérant, via API :
+  **9/11 = 82 %**, 0 faux positif (exact : 8/11 = 73 %).
+- **Ratés via API** : « dama sibbiru » → « damaski biru » ; « dama miir » → « dama mire ».
+  (Sous Colab les ratés étaient #2 et #4 : ils varient selon le backend.) Fermés par
+  l'ARCHITECTURE (filet oui/non + escalade). Ne PAS régler le détecteur sur ces clips.
+- **À soumettre au soignant** : la douleur abdominale (« sama biir dafa metti ») n'est
+  pas dans les 6 signes ; une douleur abdominale sévère est un signe d'alerte reconnu.
 
 **Détecteur tolérant** : `fuzzy=True` (défaut). Distance d'édition sur les mots de
 sens, souple sur `_STOP`, exact sur les mots ≤ 3 lettres. `fuzzy=False` = exact.
@@ -152,7 +158,7 @@ Le clip #4 raté par l'ASR est rattrapé par le dépistage.
 
 ## 6. Corpus / données (le vrai goulot)
 
-- **11 clips wolof** collectés (signes de danger, voix féminines, calme).
+- **11 clips wolof** collectés (signes de danger, 1 locutrice, calme).
 - **Fiche de collecte** : A (12 phrases de danger), B (questions banales — **4 reçus,
   à transcrire**), C (mises en situation + une longue bénigne).
 - **Condition téléphone** simulée :

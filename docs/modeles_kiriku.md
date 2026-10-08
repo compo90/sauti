@@ -43,6 +43,8 @@ car il couvre les trois langues nationales d'un seul modèle.
 |------|--------|--------|-----------|-------------|-----|-----|
 | 2026-09-23 | M-Kiriku-ASR | wolof | clair (1 phrase) | 1 clip | **0,0 %** | **0,0 %** |
 | 2026-09-30 | M-Kiriku-ASR | wolof | voix féminines, phrases courtes de danger | 11 clips | **30,4 %** (assoupli 26,1 %) | — |
+| 2026-10-08 | M-Kiriku-ASR **via API Kiriku** (fp16, RTX 4090) | wolof | mêmes 11 clips, manifeste **v1** `1e9130c9ab83…` (références incomplètes) | 11 clips | 39,0 % (assoupli 34,1 %), IC95 [15,4 – 74,2 %] — *remplacé* | 19,5 % |
+| 2026-10-08 | M-Kiriku-ASR **via API Kiriku** | wolof | mêmes 11 clips, manifeste **v2** `a2eb3c2cb7eb…` (références corrigées) | 11 clips | **26,1 %** (assoupli 21,7 %), **IC95 [11,8 – 48,5 %]** | **9,1 %** |
 
 **Lecture honnête du run du 30/09** (11 vraies voix féminines, locutrices natives) :
 - L'intervalle de confiance à 95 % (bootstrap) est **[13,7 % – 57,1 %]** : très large.
@@ -52,6 +54,29 @@ car il couvre les trois langues nationales d'un seul modèle.
   (« dama sibbiru » → « pharmacie birou », « ñàkk bu bari » → « niakoul bou bar »).
 - Prochaine mesure : **corpus élargi** (≥ 20 wolof, conditions bruit/téléphone) pour
   un WER stable. Le repère AI Hub est ~16,3 % (studio) ; notre terrain est plus dur.
+
+**Runs du 08/10 via l'API Kiriku** (`experiments/results/asr_20261008_162803.json` = v1,
+`asr_20261008_163830.json` = v2) :
+- Même modèle annoncé, servi en fp16 ; l'API est **déterministe** (2 passes identiques).
+- **Manifeste v2 : références corrigées par écoute humaine** (transcription des vocaux
+  WhatsApp par l'équipe) :
+  - clip 2 : « ñàkk bu bari » → « ñàkk bu **bar** » (ce qui a été réellement prononcé) ;
+  - clip 6 : la référence omettait la 2ᵉ moitié → « sama bët dey lëndem, **sama gis-gis
+    dafa leerul** ».
+  - « tàng » est conservé (orthographe standard CLAD) ; les variantes d'accent sont
+    mesurées par le WER assoupli, pas corrigées dans la référence.
+- **WER v2 = 26,1 % [11,8 – 48,5 %]**, CER 9,1 %. Les hypothèses ASR sont identiques à v1 :
+  tout l'écart (39,0 → 26,1 %) vient de la **qualité des références**. Leçon : la référence
+  compte autant que le modèle ; toute référence doit être *ce qui est dit*, pas le script.
+- **Limite à déclarer** : ces corrections ont été faites *après* avoir vu la sortie ASR
+  (risque de biais vers l'ASR). Bonne pratique pour la suite : transcription par un
+  locuteur natif **sans voir la sortie ASR**, double transcription sur un échantillon.
+- Écart avec le run Colab du 30/09 (30,4 %, refs v1) : non interprétable (refs différentes,
+  IC qui se recouvrent). On cite **26,1 % [11,8 – 48,5 %], API, refs v2**.
+- **Rappel danger** (détecteur tolérant, sorties ASR inchangées) : **9/11 = 82 %**, 8/11 en
+  exact, 0 faux positif. Ratés : « dama sibbiru » → « damaski biru » et « dama miir » →
+  « dama mire » ; « ñàkk bu bar » → « ñak bou bar » est rattrapé. Les ratés varient d'un
+  backend à l'autre → argument du **filet oui/non**. Détecteur **non réglé** sur ces clips.
 
 ## Détection de danger : mesure et architecture de sécurité
 
