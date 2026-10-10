@@ -50,7 +50,8 @@ def _entendre(audio, texte_tape: str) -> str:
     if texte_tape and texte_tape.strip():
         return texte_tape.strip()
     if not audio:
-        raise gr.Error("Enregistrez votre voix, ou tapez une phrase en wolof.")
+        raise gr.Error("Aucune voix reçue : cliquez sur « Arrêter » pour finir l'enregistrement "
+                       "(l'envoi est alors automatique), ou tapez la phrase en wolof.")
     if MOCK:
         raise gr.Error("Démo sans clé API : tapez la phrase en wolof dans le champ texte.")
     return PIPE.asr.transcrire(audio, langue_forcee=LANGUE).texte
@@ -144,8 +145,9 @@ with gr.Blocks(title="Sauti — démo", theme=gr.themes.Soft()) as demo:
     with gr.Group():
         gr.Markdown("## Étape 1 — Posez votre question en wolof")
         micro1 = gr.Audio(sources=["microphone", "upload"], type="filepath",
-                          label="Votre voix (60 s max)")
-        texte1 = gr.Textbox(label="… ou tapez la phrase en wolof", placeholder="amna dëret")
+                          label="Votre voix (60 s max) — cliquez sur Arrêter : l'envoi est automatique")
+        texte1 = gr.Textbox(label="… ou tapez la phrase en wolof (ou cliquez un exemple)")
+        gr.Examples([["amna dëret"], ["lan laa wara lekk"]], inputs=[texte1], label="Exemples")
         go1 = gr.Button("📞 Envoyer à Sauti", variant="primary")
         asr1 = gr.Textbox(label="Ce que l'IA a entendu (M-Kiriku-ASR)", interactive=False)
         verdict1 = gr.Markdown()
@@ -153,8 +155,9 @@ with gr.Blocks(title="Sauti — démo", theme=gr.themes.Soft()) as demo:
                          interactive=False)
     with gr.Group(visible=False) as etape2:
         gr.Markdown("## Étape 2 — Répondez « waaw » (oui) ou « déedéet » (non)")
-        micro2 = gr.Audio(sources=["microphone", "upload"], type="filepath", label="Votre réponse")
-        texte2 = gr.Textbox(label="… ou tapez", placeholder="waaw")
+        micro2 = gr.Audio(sources=["microphone", "upload"], type="filepath", label="Votre réponse — cliquez sur Arrêter : envoi automatique")
+        texte2 = gr.Textbox(label="… ou tapez")
+        gr.Examples([["waaw"], ["déedéet"]], inputs=[texte2], label="Exemples")
         go2 = gr.Button("Répondre", variant="primary")
         asr2 = gr.Textbox(label="Ce que l'IA a entendu", interactive=False)
         verdict2 = gr.Markdown()
@@ -162,7 +165,9 @@ with gr.Blocks(title="Sauti — démo", theme=gr.themes.Soft()) as demo:
     gr.Markdown(AVERTISSEMENT)
 
     go1.click(tour_1, [micro1, texte1], [asr1, verdict1, voix1, etape2])
+    micro1.stop_recording(lambda a: tour_1(a, ""), [micro1], [asr1, verdict1, voix1, etape2])
     go2.click(tour_2, [micro2, texte2], [asr2, verdict2, voix2])
+    micro2.stop_recording(lambda a: tour_2(a, ""), [micro2], [asr2, verdict2, voix2])
 
 if __name__ == "__main__":
     demo.queue(default_concurrency_limit=4).launch(
