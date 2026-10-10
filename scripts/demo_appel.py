@@ -57,11 +57,16 @@ class Appel:
     def _jouer(self, chemin: Path):
         if not self.jouer:
             return
-        if chemin.suffix.lower() == ".wav" and sys.platform == "win32":
-            import winsound
-            winsound.PlaySound(str(chemin), winsound.SND_FILENAME)
-        else:
+        if sys.platform != "win32":
             print(f"  (lire : {chemin})")
+            return
+        import subprocess, tempfile, winsound
+        if chemin.suffix.lower() != ".wav":   # .ogg WhatsApp -> wav pour la lecture
+            wav = Path(tempfile.gettempdir()) / f"sauti_lecture_{chemin.stem}.wav"
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(chemin), str(wav)],
+                           check=True)
+            chemin = wav
+        winsound.PlaySound(str(chemin), winsound.SND_FILENAME)
 
 
 def urgence(texte: str, langue: str) -> str:
