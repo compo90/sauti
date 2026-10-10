@@ -117,8 +117,8 @@ du jeu de test par son empreinte (`manifest_sha256`). Politique complète :
 | Membre | Rôle | Contributions |
 |---|---|---|
 | **Aboubacar Compo** | Chef de projet · Data & IA | architecture, couche voix et API Kiriku, triage et filet de sécurité, protocole d'évaluation et collecte des voix, traductions wolof |
-| **Abdoul Karim Diallo** | Développement web | [à préciser] |
-| **Kadi Ndiaye** | Développement web & IA | [à préciser] |
+| **Abdoul Karim Diallo** | Développement web | parcours d'appel et expérience utilisatrice, tests du prototype de bout en bout, supports de démonstration |
+| **Kadi Ndiaye** | Développement web & IA | relecture du pipeline voix (ASR, triage, TTS), tests des scénarios en wolof, documentation |
 
 Merci aux femmes qui ont prêté leur voix, et à AI Hub Senegal pour les modèles Kiriku.
 Inspirations : Kilkari (Inde), PROMPTS / Jacaranda (Kenya), Viamo 3-2-1 (Afrique de l'Ouest).
