@@ -62,6 +62,11 @@ class QuestionDepistage:
     prompt_wol: str = ""        # [A VALIDER] locuteur natif
     audio: str | None = None    # audio pre-enregistre (serere, ou confort)
 
+    def prompt(self, langue: str) -> tuple[str, str]:
+        """(question, langue_servie) : wolof si traduit, sinon francais."""
+        from sauti.knowledge.messages import choisir
+        return choisir({"fr": self.prompt_fr, "wol": self.prompt_wol}, langue)
+
 
 class DepistageDanger:
     """Construit un depistage oui/non a partir des signes de danger de la base.
@@ -83,8 +88,9 @@ class DepistageDanger:
             self._questions.append(QuestionDepistage(
                 signe_id=s["id"],
                 action=s["action"],
-                prompt_fr=f"[A VALIDER] Avez-vous : {s['libelle_fr'].lower()} ? Dites oui ou non.",
-                prompt_wol="",          # [A VALIDER] a fournir par un locuteur natif
+                prompt_fr=s.get("question", {}).get("fr") or
+                          f"[A VALIDER] Avez-vous : {s['libelle_fr'].lower()} ? Dites oui ou non.",
+                prompt_wol=s.get("question", {}).get("wol", ""),   # [A VALIDER] locuteur natif
             ))
         # les signes 'urgent' d'abord (on depiste le plus grave en premier)
         self._questions.sort(key=lambda q: 0 if q.action == "urgent" else 1)

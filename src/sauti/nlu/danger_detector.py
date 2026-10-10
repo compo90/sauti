@@ -105,6 +105,12 @@ class ResultatDanger:
     signes: list = field(default_factory=list)   # ids des signes detectes
     action: str = "info"                          # info | surveillance | urgent
     message_fr: str = ""
+    messages: dict = field(default_factory=dict)  # {langue: texte}, ex. {"wol": ...}
+
+    def message(self, langue: str) -> tuple[str, str]:
+        """(texte, langue_servie) : message dans la langue de l'appelante, sinon FR."""
+        from sauti.knowledge.messages import choisir
+        return choisir({**self.messages, "fr": self.message_fr}, langue)
 
 
 class DangerDetector:
@@ -154,4 +160,5 @@ class DangerDetector:
         return ResultatDanger(est_danger=True,
                               signes=[s["id"] for s in (urgent or touches)],
                               action=choisi["action"],
-                              message_fr=choisi["message_fr"])
+                              message_fr=choisi["message_fr"],
+                              messages=dict(choisi.get("message", {})))

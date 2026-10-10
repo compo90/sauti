@@ -29,6 +29,13 @@
         ],
         "ful": [],
         "srr": []
+      },
+      "message": {
+        "wol": ""
+      },
+      "question": {
+        "fr": "[A VALIDER] Est-ce que vous saignez beaucoup ? Répondez oui ou non.",
+        "wol": ""
       }
     },
     {
@@ -59,6 +66,13 @@
         ],
         "ful": [],
         "srr": []
+      },
+      "message": {
+        "wol": ""
+      },
+      "question": {
+        "fr": "[A VALIDER] Est-ce que vous avez eu des convulsions ou perdu connaissance ? Répondez oui ou non.",
+        "wol": ""
       }
     },
     {
@@ -90,6 +104,13 @@
         ],
         "ful": [],
         "srr": []
+      },
+      "message": {
+        "wol": ""
+      },
+      "question": {
+        "fr": "[A VALIDER] Est-ce que vous avez un fort mal de tête avec la vue trouble ? Répondez oui ou non.",
+        "wol": ""
       }
     },
     {
@@ -119,6 +140,13 @@
         ],
         "ful": [],
         "srr": []
+      },
+      "message": {
+        "wol": ""
+      },
+      "question": {
+        "fr": "[A VALIDER] Est-ce que vous avez une forte fièvre ? Répondez oui ou non.",
+        "wol": ""
       }
     },
     {
@@ -147,6 +175,13 @@
         ],
         "ful": [],
         "srr": []
+      },
+      "message": {
+        "wol": ""
+      },
+      "question": {
+        "fr": "[A VALIDER] Est-ce que le bébé bouge moins que d'habitude ? Répondez oui ou non.",
+        "wol": ""
       }
     },
     {
@@ -175,6 +210,13 @@
         ],
         "ful": [],
         "srr": []
+      },
+      "message": {
+        "wol": ""
+      },
+      "question": {
+        "fr": "[A VALIDER] Est-ce que votre visage ou vos mains sont gonflés ? Répondez oui ou non.",
+        "wol": ""
       }
     }
   ]

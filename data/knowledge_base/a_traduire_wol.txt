@@ -1,0 +1,93 @@
+# TRADUCTIONS WOLOF — messages vocaux de Sauti (lus par la voix wolof Kiriku)
+#
+# Pour chaque bloc : écrivez la traduction wolof après "wol :", sur UNE seule ligne.
+#  - Phrases courtes, comme on parle au téléphone à une femme enceinte du village.
+#  - Orthographe wolof standard si possible (ë, ñ, à, x, q...). Pas de chiffres :
+#    écrire les nombres en lettres.
+#  - Gardez le sens médical EXACT (pas d'ajout, pas d'oubli). Si un mot n'existe pas
+#    en wolof, gardez le mot français (ex : "poste de santé", "sage-femme").
+#  - Enregistrez dans VS Code (pas Word, pas Excel).
+#
+# Les blocs marqués ★ servent à la démo : à faire EN PREMIER.
+
+############ A. ACCUEIL ############
+
+id  : accueil ★
+fr  : Bienvenue sur Sauti, la ligne santé des femmes enceintes. Dites-moi ce qui vous inquiète.
+wol :
+
+id  : pas_compris ★
+fr  : Je n'ai pas bien compris. Si vous êtes inquiète, allez au poste de santé ou appelez la sage-femme.
+wol :
+
+############ B. MESSAGES D'URGENCE (danger détecté) ############
+
+id  : hemorragie ★
+fr  : C'est une urgence. Allez tout de suite au poste de santé ou à l'hôpital le plus proche. Faites-vous accompagner.
+wol :
+
+id  : convulsions
+fr  : C'est une urgence grave. Allez tout de suite à l'hôpital.
+wol :
+
+id  : cephalees_vision ★
+fr  : Mal de tête fort et vue trouble, c'est un signe de danger. Allez tout de suite au poste de santé.
+wol :
+
+id  : fievre_forte
+fr  : Une forte fièvre est un signe de danger. Allez au poste de santé sans attendre.
+wol :
+
+id  : mouvements_foetaux
+fr  : Si le bébé bouge moins que d'habitude, allez vite au poste de santé.
+wol :
+
+id  : oedeme
+fr  : Si votre visage ou vos mains gonflent, il faut le faire vérifier. Allez au poste de santé.
+wol :
+
+id  : escalade ★
+fr  : Nous prévenons la sage-femme de garde.
+wol :
+
+############ C. QUESTIONS OUI / NON (filet de sécurité) ############
+# La femme répond "waaw" (oui) ou "déedéet" (non). Terminer chaque question par
+# l'équivalent de "Répondez oui ou non".
+
+id  : q_hemorragie ★
+fr  : Est-ce que vous saignez beaucoup ? Répondez oui ou non.
+wol :
+
+id  : q_convulsions
+fr  : Est-ce que vous avez eu des convulsions ou perdu connaissance ? Répondez oui ou non.
+wol :
+
+id  : q_cephalees_vision
+fr  : Est-ce que vous avez un fort mal de tête avec la vue trouble ? Répondez oui ou non.
+wol :
+
+id  : q_fievre_forte ★
+fr  : Est-ce que vous avez une forte fièvre ? Répondez oui ou non.
+wol :
+
+id  : q_mouvements_foetaux
+fr  : Est-ce que le bébé bouge moins que d'habitude ? Répondez oui ou non.
+wol :
+
+id  : q_oedeme
+fr  : Est-ce que votre visage ou vos mains sont gonflés ? Répondez oui ou non.
+wol :
+
+############ D. RÉPONSES AUX QUESTIONS COURANTES ############
+
+id  : nutrition_grossesse ★
+fr  : Mangez de tout. Prenez chaque jour les comprimés de fer donnés au poste de santé. Mangez du niébé, des feuilles vertes et du poisson. Buvez de l'eau propre.
+wol :
+
+id  : cpn_frequence ★
+fr  : Allez au poste de santé dès que vous savez que vous êtes enceinte. Il faut au moins huit visites. La sage-femme vous donnera les dates.
+wol :
+
+id  : medicament ★
+fr  : Ne prenez aucun médicament sans l'avis de la sage-femme ou de l'agent de santé. Même une plante ou un comprimé peut être dangereux pour le bébé.
+wol :

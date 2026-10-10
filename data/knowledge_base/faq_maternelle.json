@@ -7,7 +7,7 @@
     "question_source_fr": "Combien de fois dois-je aller a la consultation prenatale ?",
     "reponses": {
       "fr": {
-        "texte": "[A VALIDER] L'OMS recommande au moins 8 contacts prenatals. Rendez-vous au poste de sante des que vous savez que vous etes enceinte, puis suivez le calendrier donne par la sage-femme.",
+        "texte": "[A VALIDER] Allez au poste de santé dès que vous savez que vous êtes enceinte. Il faut au moins huit visites. La sage-femme vous donnera les dates.",
         "audio": null,
         "statut": "traduit"
       },
@@ -32,7 +32,13 @@
       "valide_par": "",
       "protocole_ref": "PNDS a referencer",
       "date": ""
-    }
+    },
+    "mots_cles_wol": [
+      "visite",
+      "rendez-vous",
+      "consultation",
+      "seeti"
+    ]
   },
   {
     "id": "nutrition_grossesse",
@@ -42,7 +48,54 @@
     "question_source_fr": "Que dois-je manger pendant la grossesse ?",
     "reponses": {
       "fr": {
-        "texte": "[A VALIDER] Mangez varie et prenez chaque jour les comprimes de fer et d'acide folique donnes au poste de sante. Privilegiez les aliments locaux riches en fer (niebe, feuilles vertes, poisson) et buvez de l'eau propre.",
+        "texte": "[A VALIDER] Mangez de tout. Prenez chaque jour les comprimés de fer donnés au poste de santé. Mangez du niébé, des feuilles vertes et du poisson. Buvez de l'eau propre.",
+        "audio": null,
+        "statut": "traduit"
+      },
+      "wol": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "ful": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      },
+      "srr": {
+        "texte": "",
+        "audio": null,
+        "statut": "a_traduire"
+      }
+    },
+    "validation": {
+      "statut": "brouillon",
+      "valide_par": "",
+      "protocole_ref": "",
+      "date": ""
+    },
+    "mots_cles_wol": [
+      "lekk",
+      "ñam",
+      "lekkin"
+    ]
+  },
+  {
+    "id": "medicament_grossesse",
+    "intent": "medicament_grossesse",
+    "secteur": "prenatal",
+    "danger_level": "surveillance",
+    "question_source_fr": "Est-ce que ce médicament est sans danger pour le bébé ?",
+    "mots_cles_wol": [
+      "garab",
+      "médicament",
+      "medicament",
+      "pilule",
+      "comprimé"
+    ],
+    "reponses": {
+      "fr": {
+        "texte": "[A VALIDER] Ne prenez aucun médicament sans l'avis de la sage-femme ou de l'agent de santé. Même une plante ou un comprimé peut être dangereux pour le bébé.",
         "audio": null,
         "statut": "traduit"
       },

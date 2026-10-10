@@ -1,0 +1,17 @@
+{
+  "note": "[A VALIDER] Messages vocaux du serveur vocal, par langue. Repli sur 'fr' si la langue manque.",
+  "messages": {
+    "accueil": {
+      "fr": "[A VALIDER] Bienvenue sur Sauti, la ligne santé des femmes enceintes. Dites-moi ce qui vous inquiète.",
+      "wol": ""
+    },
+    "pas_compris": {
+      "fr": "[A VALIDER] Je n'ai pas bien compris. Si vous êtes inquiète, allez au poste de santé ou appelez la sage-femme.",
+      "wol": ""
+    },
+    "escalade": {
+      "fr": "[A VALIDER] Nous prévenons la sage-femme de garde.",
+      "wol": ""
+    }
+  }
+}
