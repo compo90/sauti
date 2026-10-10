@@ -1,0 +1,17 @@
+# Démo en ligne Sauti (Gradio) sur Render — offre gratuite.
+# La clé KIRIKU_API_KEY est saisie dans le tableau de bord Render, jamais dans le dépôt.
+services:
+  - type: web
+    name: sauti
+    runtime: python
+    plan: free
+    buildCommand: pip install -r hf_space/requirements.txt
+    startCommand: python hf_space/app.py
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: GRADIO_ANALYTICS_ENABLED
+        value: "False"
+      - key: KIRIKU_API_KEY
+        sync: false
