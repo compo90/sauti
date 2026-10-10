@@ -28,7 +28,7 @@ wol : lii amul xaar : demal léegi ci barabu fajjukaay bi la gën a jege, l'hôp
 
 id  : convulsions
 fr  : C'est une urgence grave. Allez tout de suite à l'hôpital.
-wol : Li dafa am solo lool. Dem leen ci lopitaal gi léegi léegi.
+wol : Li dafa am solo lool. Demal ci lopitaal gi léegi léegi.
 
 id  : cephalees_vision ★
 fr  : Mal de tête fort et vue trouble, c'est un signe de danger. Allez tout de suite au poste de santé.
@@ -48,7 +48,7 @@ wol : su sa Kanam walla loxo yu néwwi, dañu ko wara saytu.demal gaaw ci poste 
 
 id  : escalade ★
 fr  : Nous prévenons la sage-femme de garde.
-wol :
+wol : dañuy yëgal sage-femme bi nekk ci service bi.
 
 ############ C. QUESTIONS OUI / NON (filet de sécurité) ############
 # La femme répond "waaw" (oui) ou "déedéet" (non). Terminer chaque question par
@@ -64,7 +64,7 @@ wol : ndax amoon nga yëngu-yëngu yu metti walla xëm ? tontul waaw walla déed
 
 id  : q_cephalees_vision
 fr  : Est-ce que vous avez un fort mal de tête avec la vue trouble ? Répondez oui ou non.
-wol : ndax am nga metit bopp bu bare ak gis gu leerul? Tontul waaw walla déet.
+wol : ndax am nga metit bopp bu bare ak gis gu leerul? Tontul waaw walla déedéet.
 
 id  : q_fievre_forte ★
 fr  : Est-ce que vous avez une forte fièvre ? Répondez oui ou non.

@@ -64,6 +64,12 @@ class Appel:
             print(f"  (lire : {chemin})")
 
 
+def urgence(texte: str, langue: str) -> str:
+    """Message d'urgence + annonce d'escalade, seulement si elle existe dans la meme langue."""
+    esc, esc_langue = message_systeme("escalade", langue)
+    return f"{texte} {esc}" if esc_langue == langue else texte
+
+
 def scenario(a: Appel, question: str, oui_non: str | None, signe_filet: str):
     a.dire(message_systeme("accueil", a.langue)[0], "accueil")
     texte = a.ecouter(question, "question")
@@ -71,7 +77,7 @@ def scenario(a: Appel, question: str, oui_non: str | None, signe_filet: str):
     if res.est_danger:
         print(f"\n  TRIAGE > DANGER : {', '.join(res.signes)} (action {res.action})")
         msg, servie = res.message(a.langue)
-        a.dire(msg, "urgence")
+        a.dire(urgence(msg, a.langue), "urgence")
         escalader(signes=res.signes, action=res.action, langue=a.langue, contexte=texte)
         print("  ESCALADE > ticket transmis a la sage-femme de garde")
         return
@@ -95,7 +101,7 @@ def scenario(a: Appel, question: str, oui_non: str | None, signe_filet: str):
         msg = next(s for s in json.loads((REPO / "data/knowledge_base/signes_danger.json")
                    .read_text(encoding="utf-8"))["signes"] if s["id"] == signe_filet)
         texte_urg = msg.get("message", {}).get(a.langue) or msg["message_fr"]
-        a.dire(texte_urg, "urgence")
+        a.dire(urgence(texte_urg, a.langue), "urgence")
         escalader(signes=verdict.signes, action=verdict.action, langue=a.langue,
                   contexte="filet oui/non")
         print("  ESCALADE > ticket transmis a la sage-femme de garde")
