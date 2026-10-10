@@ -254,7 +254,14 @@ Qualité technique **20 %** · Langues nationales **15 %** · Viabilité & dépl
       Aucune n'est `spk01`. Manifeste v3 + téléphone + évaluation sécurité faits.
 - [x] `Matosbi*.m4a` (Drive) = vocaux d'Aboubacar lui-même (voix masculine) → hors du
       jeu de test cible (public féminin) ; utilisables plus tard en test de robustesse.
-- [ ] Fiche FAQ « médicament » [A VALIDER] (n'existe pas : sujet à risque).
+- [x] Fiche FAQ `medicament_grossesse` [A VALIDER] ajoutée.
+- [x] **Réponses en wolof** (10 oct.) : 18 messages traduits par l'équipe (`a_traduire_wol.txt`
+      → `scripts/importer_traductions.py`), repli FR tracé, jamais deux langues dans un message.
+- [x] Démo : `scripts/demo_appel.py` (3 scénarios sur la voix d'Aboubacar dans `experiments/demo/`,
+      non versionné). Vrai raté filmable : « amna dëret » → ASR « am na direct » → filet oui/non → alerte.
+- [x] Pitch deck (13 slides) : https://claude.ai/artifact/RAuH7pjGzKk2CF2MQ8vgLa — export PDF à faire,
+      lien vidéo + contributions Karim/Kadi à compléter.
+- [x] README réécrit = livrable documentation.
 
 ### Priorité 1 — AVANT le 10 oct.
 - [x] Backend API Kiriku (ASR + TTS wolof/pulaar) intégré et testé (mock HTTP).
