@@ -14,8 +14,10 @@ N'utiliser que des voix dont la personne a accepte la diffusion publique.
 from __future__ import annotations
 import argparse
 import json
+import os
 import shutil
 import sys
+import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
@@ -36,6 +38,9 @@ class Appel:
         self.dir = SORTIE / nom
         self.dir.mkdir(parents=True, exist_ok=True)
         self.n = 0
+        # Horloge commune aux 3 appels (posée par demo_video.sh) -> une seule piste pour la vidéo.
+        self.t0 = float(os.environ.get("SAUTI_T0") or time.time())
+        self.lectures: list[tuple[float, Path]] = []  # (début en s, wav joué)
 
     def dire(self, texte: str, etiquette: str):
         self.n += 1
@@ -61,12 +66,34 @@ class Appel:
             print(f"  (lire : {chemin})")
             return
         import subprocess, tempfile, winsound
-        if chemin.suffix.lower() != ".wav":   # .ogg WhatsApp -> wav pour la lecture
-            wav = Path(tempfile.gettempdir()) / f"sauti_lecture_{chemin.stem}.wav"
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(chemin), str(wav)],
-                           check=True)
-            chemin = wav
-        winsound.PlaySound(str(chemin), winsound.SND_FILENAME)
+        # Les fichiers TTS et WhatsApp crêtent à 0 dBFS (saturation sur haut-parleurs de
+        # portable) avec des volumes différents : même loudness pour tous, marge de crête.
+        wav = Path(tempfile.gettempdir()) / f"sauti_lecture_{chemin.stem}.wav"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(chemin),
+                        "-af", "highpass=f=70,loudnorm=I=-18:TP=-3:LRA=11",
+                        "-ar", "44100", "-ac", "1", str(wav)], check=True)
+        dest = self.dir / f"lecture_{len(self.lectures):02d}.wav"
+        shutil.copy(wav, dest)
+        self.lectures.append((time.time() - self.t0, dest))
+        winsound.PlaySound(str(dest), winsound.SND_FILENAME)
+
+    def piste_audio(self):
+        """Piste de l'appel entier avec les vrais délais de lecture : à caler sous la vidéo
+        si l'enregistreur d'écran n'a pas capté le son du système."""
+        if not self.lectures:
+            return
+        import subprocess
+        entrees, filtres = [], []
+        for i, (debut, wav) in enumerate(self.lectures):
+            entrees += ["-i", str(wav)]
+            filtres.append(f"[{i}]adelay={int(debut * 1000)}:all=1[a{i}]")
+        n = len(self.lectures)
+        graphe = (";".join(filtres) + ";" + "".join(f"[a{i}]" for i in range(n))
+                  + f"amix=inputs={n}:normalize=0")
+        sortie = self.dir / "piste_appel.wav"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *entrees,
+                        "-filter_complex", graphe, str(sortie)], check=True)
+        print(f"\n  PISTE  > {sortie}  (t=0 = lancement du script)")
 
 
 def urgence(texte: str, langue: str) -> str:
@@ -147,7 +174,9 @@ def main():
         return messages_pour_ecoute(a.langue)
     if not a.question:
         ap.error("--question requis (ou --messages)")
-    scenario(Appel(a.nom, a.langue, a.jouer), a.question, a.oui_non, a.signe_filet)
+    appel = Appel(a.nom, a.langue, a.jouer)
+    scenario(appel, a.question, a.oui_non, a.signe_filet)
+    appel.piste_audio()
 
 
 if __name__ == "__main__":
