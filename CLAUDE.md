@@ -129,16 +129,23 @@ céphalées/vision, fièvre forte, mouvements fœtaux, œdème.
 
 ---
 
-## 5. Résultats mesurés (à jour au 8 oct. 2026)
+## 5. Résultats mesurés (à jour au 10 oct. 2026)
 
-Jeu de test : **11 clips wolof, 1 locutrice native** (`spk01`, signes de danger, calme).
-Manifeste **v2** `a2eb3c2cb7eb…` (références corrigées par écoute le 8 oct. ; v1
-sauvegardé en privé dans `experiments/testset/raw/`).
+Manifeste **v3** `aba0ea05854b…` : **19 clips wolof, 3 locutrices** (`spk01` : 11 signes
+de danger ; `spk02`, `spk03` : 8 questions bénignes partie B), colonnes `type`
+(danger|benin) et `kb_attendu`. Variante `manifest_telephone.csv` (ffmpeg 8 kHz).
+Évaluation sécurité : `experiments/02_eval_securite.py` (agrégats + IC de Wilson).
 
-- **WER (API Kiriku, refs v2) : 26,1 % [IC95 11,8 – 48,5 %]**, assoupli 21,7 %, CER 9,1 %
-  → `experiments/results/asr_20261008_163830.json`. **Toujours citer avec l'IC**.
-  Historique : 30,4 % (Colab, refs v1), 39,0 % (API, refs v1) — écarts dus aux références.
-- **Limites** : 1 seule locutrice, phrases courtes, corrections faites après avoir vu l'ASR.
+**Chiffres à citer (10 oct., API Kiriku)** :
+- Rappel danger : **82 % (9/11) au calme, 64 % (7/11) au téléphone simulé** → justifie
+  le filet oui/non.
+- Fausses alertes : **0/8** au calme et au téléphone (IC jusqu'à 32 % : petit effectif).
+- WER 19 clips : 37,6 % [26,5–48,9] au calme, 42,7 % au téléphone ; surestimé sur la
+  partie B (références en orthographe « à la française »). WER partie A seule (v2) :
+  26,1 % [11,8–48,5].
+- Bonne fiche KB : 1/4 → le classifieur ne comprend pas le wolof (FAQ en français).
+
+Historique (v2, 11 clips, `spk01`) :
 - **Rappel danger** (métrique de sécurité principale), détecteur tolérant, via API :
   **9/11 = 82 %**, 0 faux positif (exact : 8/11 = 73 %).
 - **Ratés via API** : « dama sibbiru » → « damaski biru » ; « dama miir » → « dama mire ».
@@ -159,8 +166,8 @@ Le clip #4 raté par l'ASR est rattrapé par le dépistage.
 ## 6. Corpus / données (le vrai goulot)
 
 - **11 clips wolof** collectés (signes de danger, 1 locutrice, calme).
-- **Fiche de collecte** : A (12 phrases de danger), B (questions banales — **4 reçus,
-  à transcrire**), C (mises en situation + une longue bénigne).
+- **Fiche de collecte** : A (12 phrases de danger), B (questions banales — **4 vocaux reçus sur WhatsApp,
+  à exporter et transcrire**), C (mises en situation + une longue bénigne).
 - **Condition téléphone** simulée :
   `ffmpeg -i in.wav -ar 8000 -af "highpass=f=300,lowpass=f=3400" out.wav`.
 - **Objectif WER défendable :** 30–50 clips wolof, 5–10 locutrices, plusieurs conditions.
@@ -224,7 +231,7 @@ Dossier : https://drive.google.com/drive/folders/14Xws10ZZ1CglzHqKSlLVIVCkHB7Cs5
 | `Sauti_Kiriku_Colab.ipynb` | `1aabavx9lKQ0KK5nGSLBfV8rHDAAeINEn` | ASR+WER (A) + TTS Coqui (B) |
 | `Sauti_Demo_E2E.ipynb` | `1QqVRasZrmjEBhVwywcqCchxufOoyd6tP` | démo bout-en-bout ASR → danger → TTS |
 | `Sauti_validation_contenu.xlsx` | `1H4k0s5Gk0mGDiIYLoLPErobRrkZNM0zR` | validation clinique du contenu |
-| `Matosbi 10/12/13/14.m4a` | — | 4 enregistrements Partie B (à transcrire par un locuteur natif) |
+| `Matosbi 10/12/13/14.m4a` | — | vocaux wolof d'Aboubacar (voix masculine), hors jeu de test cible |
 | `HUG.png`, `TTS.png` | — | captures (HF / TTS) |
 
 Consentement : l'envoi des audios de test à l'API Kiriku (RunPod, UE) est
@@ -239,6 +246,16 @@ code (dépôt Git) · équipe (rôles). Nommage type `EchoSahel_Sauti_Pitch.pdf`
 Qualité technique **20 %** · Langues nationales **15 %** · Viabilité & déploiement
 **15 %** · Pitch & démo **10 %**.
 
+### État au 9 oct. 2026 (reprise après redémarrage)
+- [x] API Kiriku branchée + test de connexion OK (clé dans `.env`, ignoré par Git).
+- [x] WER via API, refs v2 : 26,1 % [11,8–48,5] ; rappel danger 82 %.
+- [x] **Partie B** intégrée (10 oct.) : 8 vocaux, 2 locutrices (Femme 1 du fichier =
+      `spk02`, Femme 2 = `spk03` ; la 3ᵉ a été écartée par Aboubacar, réponses non conformes).
+      Aucune n'est `spk01`. Manifeste v3 + téléphone + évaluation sécurité faits.
+- [x] `Matosbi*.m4a` (Drive) = vocaux d'Aboubacar lui-même (voix masculine) → hors du
+      jeu de test cible (public féminin) ; utilisables plus tard en test de robustesse.
+- [ ] Fiche FAQ « médicament » [A VALIDER] (n'existe pas : sujet à risque).
+
 ### Priorité 1 — AVANT le 10 oct.
 - [x] Backend API Kiriku (ASR + TTS wolof/pulaar) intégré et testé (mock HTTP).
 - [ ] Mettre la clé dans `.env`, tester un appel réel (1 clip wolof, 1 phrase TTS wolof + pulaar).
@@ -250,7 +267,7 @@ Qualité technique **20 %** · Langues nationales **15 %** · Viabilité & dépl
 ### Priorité 2 — contenu & robustesse
 - [ ] Validation clinique du contenu `[A VALIDER]` par un soignant.
 - [ ] Libellés wolof des questions oui/non du dépistage (locuteur natif).
-- [ ] Transcrire et intégrer les 4 audios Partie B.
+- [ ] Normaliser les références partie B en orthographe CLAD (locuteur natif, sans copier l'ASR).
 - [ ] Traductions wol/ful/srr de la FAQ (nombres > 10 en toutes lettres pour le TTS).
 - [ ] Repli ASR si l'API échoue (aujourd'hui l'exception remonte) → menu guidé / escalade.
 

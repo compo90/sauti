@@ -81,6 +81,13 @@ vraies lignes, déposer les `.wav` dans `experiments/testset/audio/`.
 Les résultats sont écrits dans `experiments/results/asr_<horodatage>.json`
 et résumés dans le terminal. Reporter le tableau final dans `docs/modeles_kiriku.md`.
 
+## Évaluation sécurité
+
+`python experiments/02_eval_securite.py [--manifest ...]` : rappel danger, fausses
+alertes, bonne fiche KB, mesurés sur la **sortie ASR**, avec IC de Wilson. Le manifeste
+doit avoir les colonnes `type` (danger|benin) et, pour le bénin, `kb_attendu`.
+Résultat : `results/securite_*.json` (agrégats, versionné).
+
 ## Politique de données (dépôt public)
 
 | Élément | Nature | Où il vit | Versionné ? |

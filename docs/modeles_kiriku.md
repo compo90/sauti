@@ -78,6 +78,39 @@ car il couvre les trois langues nationales d'un seul modèle.
   « dama mire » ; « ñàkk bu bar » → « ñak bou bar » est rattrapé. Les ratés varient d'un
   backend à l'autre → argument du **filet oui/non**. Détecteur **non réglé** sur ces clips.
 
+### Run du 10/10 — manifeste v3 : 19 clips, 3 locutrices, + condition téléphone
+
+Ajout de la **partie B** : 8 questions bénignes en voix réelle (2 nouvelles locutrices
+`spk02`, `spk03` ; 4 questions chacune : alimentation, prochaine visite, médicament,
+salutation). Une 3ᵉ locutrice a été écartée (réponses non conformes aux consignes).
+Condition **téléphone** simulée par ffmpeg (8 kHz, bande 300–3400 Hz) sur les 19 clips.
+
+| Mesure (API Kiriku) | Calme | Téléphone simulé | Fichier |
+|---|---|---|---|
+| WER (19 clips) | 37,6 % [26,5 – 48,9] | 42,7 % [30,2 – 56,2] | `asr_20261010_070437` / `_070520` |
+| **Rappel danger** (11 signes) | **9/11 = 82 %** [52 – 95] | **7/11 = 64 %** [35 – 85] | `securite_20261010_070354` / `_070552` |
+| **Fausses alertes** (8 questions bénignes) | **0/8** [0 – 32] | **0/8** [0 – 32] | idem |
+| Bonne fiche KB trouvée (4 questions avec fiche) | 1/4 | 1/4 | idem |
+
+IC 95 % : bootstrap (WER), Wilson (proportions).
+
+**Lecture :**
+- **Le téléphone dégrade la sécurité du texte libre** (82 % → 64 %). C'est la mesure
+  qui justifie l'architecture : sur un vrai appel, la barrière 1 ne suffit pas, le
+  **filet oui/non** (barrière 2) est indispensable.
+- **0 fausse alerte** sur des questions bénignes réelles, mais seulement 8 énoncés :
+  l'IC monte à 32 %. À élargir avant d'annoncer une spécificité.
+- **Le WER des clips B est surestimé par l'orthographe des références** : elles sont écrites
+  « à la française » (kan, done, khale, docteur, as salam alaykoum), alors que l'ASR sort
+  l'orthographe wolof standard (kañ, doon, xale, doktoor, asalaamaalekum). Normaliser les
+  références en orthographe CLAD, **par un locuteur natif, sans copier l'ASR**, avant de
+  comparer ce WER aux runs précédents.
+- **Le classifieur d'intention ne comprend pas encore le wolof** (1/4) : la FAQ n'a que des
+  formulations françaises. Repli actuel = « rendez-vous au poste de santé » (sûr mais
+  pauvre). Priorité post-challenge : formulations wolof de la FAQ.
+- **2 questions sur 8 portent sur un médicament : aucune fiche n'existe.** C'est un sujet à
+  risque ; la seule réponse sûre est d'orienter vers l'agent de santé.
+
 ## Détection de danger : mesure et architecture de sécurité
 
 Le WER seul ne dit rien du risque **médical**. La vraie question : *un signe de danger

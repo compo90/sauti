@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "date": "2026-10-10T07:03:54+00:00",
+    "backend": "api Kiriku",
+    "manifest": "manifest.csv",
+    "manifest_sha256": "aba0ea05854ba7ff15963081534ac83aa92b31db7b39832f61c752a1daead617",
+    "n_locuteurs": 3,
+    "conditions": [
+      "calme"
+    ]
+  },
+  "rappel_danger": {
+    "k": 9,
+    "n": 11,
+    "taux": 0.8182,
+    "ic95": [
+      0.523,
+      0.9486
+    ]
+  },
+  "fausses_alertes": {
+    "k": 0,
+    "n": 8,
+    "taux": 0.0,
+    "ic95": [
+      0.0,
+      0.3244
+    ]
+  },
+  "bonne_fiche_kb": {
+    "k": 1,
+    "n": 4,
+    "taux": 0.25,
+    "ic95": [
+      0.0456,
+      0.6994
+    ]
+  },
+  "questions_sans_fiche_kb": 4
+}

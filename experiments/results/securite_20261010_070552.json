@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "date": "2026-10-10T07:05:52+00:00",
+    "backend": "api Kiriku",
+    "manifest": "manifest_telephone.csv",
+    "manifest_sha256": "25e401e36295ae3c855eb1bc476697c6e4e8cc6ddd5b97b7668949814cc7e70c",
+    "n_locuteurs": 3,
+    "conditions": [
+      "telephone"
+    ]
+  },
+  "rappel_danger": {
+    "k": 7,
+    "n": 11,
+    "taux": 0.6364,
+    "ic95": [
+      0.3538,
+      0.8483
+    ]
+  },
+  "fausses_alertes": {
+    "k": 0,
+    "n": 8,
+    "taux": 0.0,
+    "ic95": [
+      0.0,
+      0.3244
+    ]
+  },
+  "bonne_fiche_kb": {
+    "k": 1,
+    "n": 4,
+    "taux": 0.25,
+    "ic95": [
+      0.0456,
+      0.6994
+    ]
+  },
+  "questions_sans_fiche_kb": 4
+}
