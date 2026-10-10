@@ -46,7 +46,7 @@ La sécurité passe avant la pertinence : dans le doute, Sauti escalade.
 ```bash
 git clone https://github.com/compo90/sauti && cd sauti
 python -m venv .venv && source .venv/bin/activate   # Windows : .venv\Scripts\activate
-pip install -r requirements.txt
+pip install jsonschema pydantic-settings pytest     # dépendances légères du mode mock
 export PYTHONPATH="src:."                            # Windows : set PYTHONPATH=src;.
 python -m sauti.pipeline --demo "amna dëret" --langue wol         # signe de danger → alerte
 python -m sauti.pipeline --demo "lan laa wara lekk" --langue wol  # question courante → conseil en wolof
