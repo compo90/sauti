@@ -3,11 +3,11 @@
   "messages": {
     "accueil": {
       "fr": "[A VALIDER] Bienvenue sur Sauti, la ligne santé des femmes enceintes. Dites-moi ce qui vous inquiète.",
-      "wol": ""
+      "wol": "Dalal ak jàmm ci Sauti, liy wóorale wérgi-yaramu jigéen yu ëmb yi. Waxal ma lu la jaaxal."
     },
     "pas_compris": {
       "fr": "[A VALIDER] Je n'ai pas bien compris. Si vous êtes inquiète, allez au poste de santé ou appelez la sage-femme.",
-      "wol": ""
+      "wol": "dégguma ko bu baax. Su la jaaxle, demal ci poste de santé bi walla nga wo sage-femme bi."
     },
     "escalade": {
       "fr": "[A VALIDER] Nous prévenons la sage-femme de garde.",

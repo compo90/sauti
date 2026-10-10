@@ -31,11 +31,11 @@
         "srr": []
       },
       "message": {
-        "wol": ""
+        "wol": "lii amul xaar : demal léegi ci barabu fajjukaay bi la gën a jege, l'hôpital walla poste de santé.  àndal ak keneen."
       },
       "question": {
         "fr": "[A VALIDER] Est-ce que vous saignez beaucoup ? Répondez oui ou non.",
-        "wol": ""
+        "wol": "ndax dangay ñàkk bu bari ? tontul waaw walla déedéet."
       }
     },
     {
@@ -68,11 +68,11 @@
         "srr": []
       },
       "message": {
-        "wol": ""
+        "wol": "Li dafa am solo lool. Dem leen ci lopitaal gi léegi léegi."
       },
       "question": {
         "fr": "[A VALIDER] Est-ce que vous avez eu des convulsions ou perdu connaissance ? Répondez oui ou non.",
-        "wol": ""
+        "wol": "ndax amoon nga yëngu-yëngu yu metti walla xëm ? tontul waaw walla déedéet."
       }
     },
     {
@@ -106,11 +106,11 @@
         "srr": []
       },
       "message": {
-        "wol": ""
+        "wol": "mettit bopp bu dëgër ak gis gu leerul,loolu màndarga la.demal ci saa si ci poste de santé bi."
       },
       "question": {
         "fr": "[A VALIDER] Est-ce que vous avez un fort mal de tête avec la vue trouble ? Répondez oui ou non.",
-        "wol": ""
+        "wol": "ndax am nga metit bopp bu bare ak gis gu leerul? Tontul waaw walla déet."
       }
     },
     {
@@ -142,11 +142,11 @@
         "srr": []
       },
       "message": {
-        "wol": ""
+        "wol": "Yaram wu tàng mandarga la, demal ci poste de santé amul xaar."
       },
       "question": {
         "fr": "[A VALIDER] Est-ce que vous avez une forte fièvre ? Répondez oui ou non.",
-        "wol": ""
+        "wol": "ndax am nga yaram wu tàng lool? tontul waaw walla déedéet."
       }
     },
     {
@@ -177,11 +177,11 @@
         "srr": []
       },
       "message": {
-        "wol": ""
+        "wol": "su liir bi yënguwul ni mu daan def, demal gaaw ci poste de santé ba."
       },
       "question": {
         "fr": "[A VALIDER] Est-ce que le bébé bouge moins que d'habitude ? Répondez oui ou non.",
-        "wol": ""
+        "wol": "ndax liir bi yënguwul ni mu daan def ? tontul waaw walla déedéet."
       }
     },
     {
@@ -212,11 +212,11 @@
         "srr": []
       },
       "message": {
-        "wol": ""
+        "wol": "su sa Kanam walla loxo yu néwwi, dañu ko wara saytu.demal gaaw ci poste de santé ba."
       },
       "question": {
         "fr": "[A VALIDER] Est-ce que votre visage ou vos mains sont gonflés ? Répondez oui ou non.",
-        "wol": ""
+        "wol": "ndax sa Kanam walla loxo yu néwwi ? tontul waaw walla déedéet."
       }
     }
   ]

@@ -14,37 +14,37 @@
 
 id  : accueil ★
 fr  : Bienvenue sur Sauti, la ligne santé des femmes enceintes. Dites-moi ce qui vous inquiète.
-wol :
+wol : Dalal ak jàmm ci Sauti, liy wóorale wérgi-yaramu jigéen yu ëmb yi. Waxal ma lu la jaaxal.
 
 id  : pas_compris ★
 fr  : Je n'ai pas bien compris. Si vous êtes inquiète, allez au poste de santé ou appelez la sage-femme.
-wol :
+wol : dégguma ko bu baax. Su la jaaxle, demal ci poste de santé bi walla nga wo sage-femme bi.
 
 ############ B. MESSAGES D'URGENCE (danger détecté) ############
 
 id  : hemorragie ★
 fr  : C'est une urgence. Allez tout de suite au poste de santé ou à l'hôpital le plus proche. Faites-vous accompagner.
-wol :
+wol : lii amul xaar : demal léegi ci barabu fajjukaay bi la gën a jege, l'hôpital walla poste de santé.  àndal ak keneen.
 
 id  : convulsions
 fr  : C'est une urgence grave. Allez tout de suite à l'hôpital.
-wol :
+wol : Li dafa am solo lool. Dem leen ci lopitaal gi léegi léegi.
 
 id  : cephalees_vision ★
 fr  : Mal de tête fort et vue trouble, c'est un signe de danger. Allez tout de suite au poste de santé.
-wol :
+wol : mettit bopp bu dëgër ak gis gu leerul,loolu màndarga la.demal ci saa si ci poste de santé bi.
 
 id  : fievre_forte
 fr  : Une forte fièvre est un signe de danger. Allez au poste de santé sans attendre.
-wol :
+wol : Yaram wu tàng mandarga la, demal ci poste de santé amul xaar.
 
 id  : mouvements_foetaux
 fr  : Si le bébé bouge moins que d'habitude, allez vite au poste de santé.
-wol :
+wol : su liir bi yënguwul ni mu daan def, demal gaaw ci poste de santé ba.
 
 id  : oedeme
 fr  : Si votre visage ou vos mains gonflent, il faut le faire vérifier. Allez au poste de santé.
-wol :
+wol : su sa Kanam walla loxo yu néwwi, dañu ko wara saytu.demal gaaw ci poste de santé ba.
 
 id  : escalade ★
 fr  : Nous prévenons la sage-femme de garde.
@@ -56,38 +56,38 @@ wol :
 
 id  : q_hemorragie ★
 fr  : Est-ce que vous saignez beaucoup ? Répondez oui ou non.
-wol :
+wol : ndax dangay ñàkk bu bari ? tontul waaw walla déedéet. 
 
 id  : q_convulsions
 fr  : Est-ce que vous avez eu des convulsions ou perdu connaissance ? Répondez oui ou non.
-wol :
+wol : ndax amoon nga yëngu-yëngu yu metti walla xëm ? tontul waaw walla déedéet.
 
 id  : q_cephalees_vision
 fr  : Est-ce que vous avez un fort mal de tête avec la vue trouble ? Répondez oui ou non.
-wol :
+wol : ndax am nga metit bopp bu bare ak gis gu leerul? Tontul waaw walla déet.
 
 id  : q_fievre_forte ★
 fr  : Est-ce que vous avez une forte fièvre ? Répondez oui ou non.
-wol :
+wol : ndax am nga yaram wu tàng lool? tontul waaw walla déedéet.
 
 id  : q_mouvements_foetaux
 fr  : Est-ce que le bébé bouge moins que d'habitude ? Répondez oui ou non.
-wol :
+wol : ndax liir bi yënguwul ni mu daan def ? tontul waaw walla déedéet.
 
 id  : q_oedeme
 fr  : Est-ce que votre visage ou vos mains sont gonflés ? Répondez oui ou non.
-wol :
+wol : ndax sa Kanam walla loxo yu néwwi ? tontul waaw walla déedéet.
 
 ############ D. RÉPONSES AUX QUESTIONS COURANTES ############
 
 id  : nutrition_grossesse ★
 fr  : Mangez de tout. Prenez chaque jour les comprimés de fer donnés au poste de santé. Mangez du niébé, des feuilles vertes et du poisson. Buvez de l'eau propre.
-wol :
+wol : lekkal lu nekk. jëlal bés bu nekk comprimé yu fer yi ñu la jox ci poste de santé bi. lekkal ñebbe, xobi ñax yu wert ak jën. Naanal ndox mu set.
 
 id  : cpn_frequence ★
 fr  : Allez au poste de santé dès que vous savez que vous êtes enceinte. Il faut au moins huit visites. La sage-femme vous donnera les dates.
-wol :
+wol : demal ci poste de santé bi saa su xamee ne ëmb nga. War nga fa dem lu mu néew néew juróom ñetti yoon. Sage-femme bi dina la wax bés yi nga war a ñëw.
 
 id  : medicament ★
 fr  : Ne prenez aucun médicament sans l'avis de la sage-femme ou de l'agent de santé. Même une plante ou un comprimé peut être dangereux pour le bébé.
-wol :
+wol : Bul jël benn garab te nga jëkkul a laaj sage-femme bi walla fajkat bi. Bu dee sax gàncax walla benn comprimé rekk, man na lor doom ji ci biir.

@@ -52,7 +52,9 @@ class Pipeline:
             escalader(signes=d.signes, action=d.action, langue=langue, contexte=texte)
             msg, servie = d.message(langue)
             if d.action == "urgent":
-                msg = f"{msg} {message_systeme('escalade', servie)[0]}"
+                esc, esc_langue = message_systeme("escalade", servie)
+                if esc_langue == servie:   # jamais deux langues dans un meme message
+                    msg = f"{msg} {esc}"
             if servie != langue:
                 log.warning("Message danger non traduit en %s : repli %s", langue, servie)
             audio = self._dire(msg, langue)  # TODO: audio danger pre-enregistre (srr)

@@ -47,10 +47,14 @@ def test_pipeline_signale_la_langue_servie():
     assert "[A VALIDER]" not in res["reponse"] and res["langue_servie"] in ("wol", "fr")
 
 
-def test_pipeline_danger_ajoute_escalade():
+def test_pipeline_danger_ajoute_escalade_dans_la_meme_langue():
     res = Pipeline(mock=True).traiter(texte_mock="amna dëret", langue="wol")
     assert res["danger"] and "[A VALIDER]" not in res["reponse"]
-    assert message_systeme("escalade", res["langue_servie"])[0].replace("[A VALIDER] ", "") in res["reponse"]
+    esc, esc_langue = message_systeme("escalade", res["langue_servie"])
+    if esc_langue == res["langue_servie"]:
+        assert texte_parle(esc) in res["reponse"]
+    else:  # escalade non traduite : pas de francais colle au message wolof
+        assert texte_parle(esc) not in res["reponse"]
 
 
 def test_importeur_lit_les_blocs():

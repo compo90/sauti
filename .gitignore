@@ -28,3 +28,4 @@ experiments/testset/raw/
 experiments/testset/audio/*.wav
 experiments/smoke/
 experiments/testset/manifest_telephone.csv
+experiments/demo/
