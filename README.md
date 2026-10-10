@@ -6,6 +6,8 @@
 > réponse vocale validée, ou alerte et sage-femme prévenue.
 >
 > Équipe **Echo Sahel** · Kiriku Voice Inclusive & Creative Challenge 2026 · secteur Santé.
+>
+> 🎬 **Vidéo de démonstration (3 appels réels en wolof)** : https://youtu.be/SiCGVt_BgjM
 
 ## ⚠️ Avertissement clinique
 Prototype technique. **Aucun contenu médical n'est encore validé** : tout est marqué

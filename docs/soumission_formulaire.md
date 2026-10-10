@@ -39,7 +39,7 @@ La sécurité passe avant la pertinence : dans le doute, Sauti escalade.
 
 ## 3. Découvrir le prototype
 
-- **Vidéo de démonstration** (3 appels réels en wolof, environ 3 min) : [LIEN VIDÉO]
+- **Vidéo de démonstration** (3 appels réels en wolof, environ 3 min) : https://youtu.be/SiCGVt_BgjM
 - **Pitch deck** : EchoSahel_Sauti_Pitch.pdf (joint)
 - **Test sans clé, sans GPU, sans réseau** (mode mock) :
 
