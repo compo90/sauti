@@ -7,6 +7,7 @@
 >
 > Équipe **Echo Sahel** · Kiriku Voice Inclusive & Creative Challenge 2026 · secteur Santé.
 >
+> 🎙️ **Démo en ligne (parlez en wolof au micro)** : https://sauti-u2gk.onrender.com
 > 🎬 **Vidéo de démonstration (3 appels réels en wolof)** : https://youtu.be/SiCGVt_BgjM
 
 ## ⚠️ Avertissement clinique

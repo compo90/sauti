@@ -39,6 +39,11 @@ La sécurité passe avant la pertinence : dans le doute, Sauti escalade.
 
 ## 3. Découvrir le prototype
 
+- **Démo en ligne, testable dans le navigateur** : https://sauti-u2gk.onrender.com
+  Parlez en wolof au micro (ou tapez la phrase) : « amna dëret » (je saigne) → alerte ;
+  « lan laa wara lekk » (que dois-je manger ?) → conseil en wolof, puis question de sécurité
+  oui/non. Vraie chaîne Kiriku ASR + TTS. Hébergement gratuit : la première ouverture peut
+  prendre environ 1 minute (serveur en veille).
 - **Vidéo de démonstration** (3 appels réels en wolof, environ 3 min) : https://youtu.be/SiCGVt_BgjM
 - **Pitch deck** : EchoSahel_Sauti_Pitch.pdf (joint)
 - **Test sans clé, sans GPU, sans réseau** (mode mock) :
@@ -55,7 +60,8 @@ pytest -q                                                          # 34 tests
 
 ## 4. Instructions et identifiants
 
-Aucun identifiant n'est nécessaire pour le mode mock. Pour la vraie chaîne vocale, copiez
+Aucun identifiant n'est nécessaire : la démo en ligne (https://sauti-u2gk.onrender.com) est ouverte, la clé Kiriku
+est stockée côté serveur. Pour le mode mock, aucun identifiant non plus. Pour la vraie chaîne vocale, copiez
 `.env.example` en `.env`, mettez-y votre clé `KIRIKU_API_KEY` (clé d'équipe du challenge, non
 publiée), puis lancez `python scripts/smoke_api.py`.
 
